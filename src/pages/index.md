@@ -12,4 +12,3 @@ with our [local slack group](//slackacuse.herokuapp.com)
 
 Take a look at our upcoming events below, join us in slack,
 and join our friendly community of Syracuse devs.
-

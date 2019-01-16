@@ -27,6 +27,7 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         defaultLayouts: { default: path.resolve('./src/components/layout.js') },
+        extensions: [".mdx", ".md"]
       },
     },
     `gatsby-plugin-sharp`,
