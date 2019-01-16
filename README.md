@@ -12,7 +12,7 @@ is built on, deployed to, and hosted by [netlify](https://www.netlify.com).
 2. [Install gatsby CLI](https://www.gatsbyjs.org/tutorial/part-zero/#install-gatsby-cli)
 3. Run `gatsby develop`
 
-Hugo will build the site and run a webserver so you can view it.  Visit
+Gatsby will build the site and run a webserver so you can view it.  Visit
 http://localhost:8000 to view the site.
 
 ### Adding and removing meetup groups
