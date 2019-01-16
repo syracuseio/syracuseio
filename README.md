@@ -19,8 +19,6 @@ MEETUP_API_KEY=4dea
 Gatsby will build the site and run a webserver so you can view it.  Visit
 http://localhost:8000 to view the site.
 
-### Grabbing API Tokens
-
 ### Adding and removing meetup groups
 
 We'd love to include your group! Please contact the syracuse.io maintainers to get your 
