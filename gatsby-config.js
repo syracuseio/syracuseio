@@ -5,19 +5,19 @@ module.exports = {
     title: `Syracuse.io`,
     description: `Your local developer community.`,
     author: `@syracuseio`,
-    menuLinks:[
+    menuLinks: [
       {
-        name:'Community',
-        link:'/community'
+        name: 'Community',
+        link: '/community',
       },
       {
-        name:'Groups',
-        link:'/groups'
+        name: 'Groups',
+        link: '/groups',
       },
       {
-        name:'Resources',
-        link:'/resources'
-      }
+        name: 'Resources',
+        link: '/resources',
+      },
     ],
   },
   plugins: [
@@ -41,7 +41,7 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         defaultLayouts: { default: path.resolve('./src/components/layout.js') },
-        extensions: [".mdx", ".md"]
+        extensions: ['.mdx', '.md'],
       },
     },
     `gatsby-plugin-sharp`,
@@ -57,6 +57,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-styled-components'
+    'gatsby-plugin-styled-components',
   ],
 }

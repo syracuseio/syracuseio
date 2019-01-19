@@ -1,13 +1,13 @@
 ---
 title: Women in Coding
-group: women_in_coding
-bigimg: [{src: "/img/womenincoding.jpg"}]
 summary: >
-    Monthly workshops that give people a chance to work on a project
-    or work through an online curriculum at their own pace.
-    Each workshop will have at least one mentor to provide support and answer questions.
-    <br>Although this group is geared towards women, anyone is welcome to attend our classes
+  Monthly workshops that give people a chance to work on a project
+  or work through an online curriculum at their own pace.
+  Each workshop will have at least one mentor to provide support and answer questions.
+  Although this group is geared towards women, anyone is welcome to attend our classes
+imgAlt: women typing at laptops
 ---
+
 Women in Coding will be hosting workshop style classes once a month every
 second Saturday of the month, from 10am-12pm at The Tech Garden!
 
@@ -20,3 +20,15 @@ support and answer questions.
 Although this group is geared towards women, anyone is welcome to attend
 our classes.
 
+import { graphql } from 'gatsby'
+export const PageQuery = graphql`
+  {
+    heroImage: file(relativePath: { eq: "womenincoding.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
