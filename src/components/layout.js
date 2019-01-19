@@ -50,7 +50,9 @@ const Layout = props => {
             siteTitle={data.site.siteMetadata.title}
             menuLinks={data.site.siteMetadata.menuLinks}
           />
-          <Hero data={data_} pageContext={pageContext} />
+          {pageContext.frontmatter && (
+            <Hero data={data_} pageContext={pageContext} />
+          )}
           <main>{props.children}</main>
           <Footer />
         </LayoutContainer>
