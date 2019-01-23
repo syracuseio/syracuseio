@@ -7,6 +7,20 @@ module.exports = {
     title: `Syracuse.io`,
     description: `Your local developer community.`,
     author: `@syracuseio`,
+    menuLinks:[
+      {
+        name:'Community',
+        link:'/community'
+      },
+      {
+        name:'Groups',
+        link:'/groups'
+      },
+      {
+        name:'Resources',
+        link:'/resources'
+      }
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
