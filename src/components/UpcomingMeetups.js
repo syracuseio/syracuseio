@@ -1,6 +1,22 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import moment from 'moment'
+import styled from 'styled-components'
+
+const EventContainer = styled.div`
+  a {
+    color: #008aff;
+    text-decoration: none;
+  }
+
+  blockquote {
+    border-left: 5px solid #eee;
+    padding-left: 26px;
+    margin-left: 0;
+    color: #808080;
+    font-style: italic;
+  }
+`
 
 const query = graphql`
   {
@@ -45,45 +61,35 @@ function UpcomingMeetups() {
   return (
     <StaticQuery
       query={query}
-      render={data => (
-        <>
-          <h2>Upcoming developer events</h2>
-          {data.allMeetupEvent.edges.map(({ node }) => {
-            let description = parseDescription(node.description)
-            let parsedDate = moment(node.local_date, 'YYYY-MM-DD').format(
-              'dddd, MMMM Do, YYYY'
-            )
+      render={data => {
+        let meetups = data.allMeetupEvent.edges
+        return (
+          <>
+            <h2>Upcoming developer events</h2>
+            {meetups.map(({ node }, idx) => {
+              let description = parseDescription(node.description)
+              let parsedDate = moment(node.local_date, 'YYYY-MM-DD').format(
+                'dddd, MMMM Do, YYYY'
+              )
 
-            return (
-              <div key={node.id}>
-                <strong>
-                  <time>{parsedDate}</time>
-                </strong>
-                <h4>
-                  <a
-                    style={{ color: '#008AFF', textDecoration: 'none' }}
-                    href={node.link}
-                  >
-                    {node.name}
-                  </a>
-                </h4>
-                <blockquote
-                  style={{
-                    borderLeft: '5px solid #eee',
-                    paddingLeft: 26,
-                    marginLeft: 0,
-                    color: '#808080',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  <p>{description}</p>
-                </blockquote>
-                <hr />
-              </div>
-            )
-          })}
-        </>
-      )}
+              return (
+                <EventContainer key={node.id}>
+                  <strong>
+                    <time>{parsedDate}</time>
+                  </strong>
+                  <h4>
+                    <a href={node.link}>{node.name}</a>
+                  </h4>
+                  <blockquote>
+                    <p>{description}</p>
+                  </blockquote>
+                  {idx !== meetups.length - 1 && <hr />}
+                </EventContainer>
+              )
+            })}
+          </>
+        )
+      }}
     />
   )
 }
