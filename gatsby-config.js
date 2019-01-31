@@ -1,5 +1,7 @@
 const path = require('path')
 
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Syracuse.io`,
@@ -43,6 +45,16 @@ module.exports = {
         defaultLayouts: { default: path.resolve('./src/components/layout.js') },
         extensions: [".mdx", ".md"]
       },
+    },
+    {
+      resolve: `gatsby-source-meetup`,
+      options: {
+        key: process.env.MEETUP_API_KEY,
+        groupUrlName: `Syracuse-Software-Development-Meetup`,
+        status: `upcoming,past`,
+        desc: `true`,
+        page: 200,
+      }
     },
     `gatsby-plugin-sharp`,
     {
