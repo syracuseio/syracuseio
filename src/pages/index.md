@@ -4,6 +4,8 @@ subtitle: Your local developer community
 imgAlt: Historic photo of Clinton Square in Downtown Syracuse
 ---
 
+import UpcomingMeetups from '../components/UpcomingMeetups'
+
 Welcome to [Syracuse.io](http://syracuse.io), home to Syracuse's diverse and growing developer scene.
 
 This is your one stop for information on [local meet ups](/groups/), lists of [local data
@@ -20,6 +22,8 @@ with our [local slack group](//slackacuse.herokuapp.com)
 
 Take a look at our upcoming events below, join us in slack,
 and join our friendly community of Syracuse devs.
+
+<UpcomingMeetups />
 
 import { graphql } from 'gatsby'
 export const PageQuery = graphql`
