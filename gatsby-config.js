@@ -46,6 +46,7 @@ module.exports = {
         extensions: [".mdx", ".md"]
       },
     },
+    'gatsby-plugin-catch-links',
     {
       resolve: `gatsby-source-meetup`,
       options: {
