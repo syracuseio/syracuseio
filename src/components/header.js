@@ -5,17 +5,16 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
 const Nav = styled.nav`
-  background-color: #1B1B1B;
+  background-color: #1b1b1b;
   border-bottom: 2px solid #474747;
   padding: 0 20px;
   font-size: 12px;
   min-height: 50px;
-  margin-bottom: 20px;
 
   a {
     text-decoration: none;
     font-weight: 700;
-    color: #F0F0F0;
+    color: #f0f0f0;
   }
 `
 
@@ -34,7 +33,6 @@ const BrandItem = styled.li`
   margin-right: auto;
 `
 
-
 const MenuItem = styled.li`
   text-transform: uppercase;
   padding: 20px 15px;
@@ -43,22 +41,25 @@ const MenuItem = styled.li`
 `
 
 const Header = ({ siteTitle, menuLinks }) => (
-<Nav>
-  <NavList role="navigation">
-    <BrandItem><Link to="/">Syracuse.io</Link></BrandItem>
-    {
-      menuLinks.map(link =>
-        <MenuItem key={link.name}>
-          <Link to={link.link}>{link.name}</Link>
-        </MenuItem>)
-    }
-  </NavList>
-</Nav>
+  <header>
+    <Nav>
+      <NavList role="navigation">
+        <BrandItem>
+          <Link to="/">Syracuse.io</Link>
+        </BrandItem>
+        {menuLinks.map(link => (
+          <MenuItem key={link.name}>
+            <Link to={link.link}>{link.name}</Link>
+          </MenuItem>
+        ))}
+      </NavList>
+    </Nav>
+  </header>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  menuLinks: PropTypes.string,
+  menuLinks: PropTypes.array,
 }
 
 Header.defaultProps = {
