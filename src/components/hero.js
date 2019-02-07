@@ -6,25 +6,21 @@ import styled, { css } from 'styled-components'
 
 const HeroContainer = styled.section`
   position: relative;
-  height: ${props => (props.img !== undefined ? '450px' : '250px')};
+  height: ${props => (props.img !== undefined ? '450px' : '300px')};
 
   .container {
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
-    text-align: center;
     width: 100%;
+    height: 100%;
     color: ${props => props.titleColor};
-    ${props =>
-      props.img
-        ? css`
-            padding: 150px 0;
-            text-shadow: 1px 1px 3px #000;
-          `
-        : css`
-            padding: 50px 0;
-          `}
+    text-shadow: ${props => props.img ? '1px 1px 3px #000': 'unset'};
   }
 
   h1 {
@@ -51,6 +47,22 @@ const HeroContainer = styled.section`
         box-shadow: 1px 1px 3px #000;
       `};
   }
+
+  .heroImage {
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      font-size: 27px;
+    }
+  }
 `
 
 function Hero(props) {
@@ -72,8 +84,8 @@ function Hero(props) {
       </div>
       {heroImage && (
         <Img
+          className="heroImage"
           fluid={heroImage.childImageSharp.fluid}
-          style={{ height: 450 }}
           alt={frontmatter.imgAlt}
         />
       )}
