@@ -7,6 +7,7 @@ import Header from './header'
 import Hero from './hero'
 import Footer from './footer'
 import './layout.css'
+import SEO from './seo'
 
 const LayoutContainer = styled.div`
   /* adding flexbox container to layout so the footer will be pushed to the bottom of the viewport / page no matter what */
@@ -44,19 +45,30 @@ const Layout = props => {
           }
         }
       `}
-      render={data => (
-        <LayoutContainer>
-          <Header
-            siteTitle={data.site.siteMetadata.title}
-            menuLinks={data.site.siteMetadata.menuLinks}
-          />
-          {pageContext && pageContext.frontmatter && (
-            <Hero data={data_} pageContext={pageContext} />
-          )}
-          <main>{props.children}</main>
-          <Footer />
-        </LayoutContainer>
-      )}
+      render={data => {
+        let title
+
+        if (pageContext) {
+          // Set the title for the homepage to be "Home"
+          if (pageContext.frontmatter.title === data.site.siteMetadata.title) {
+            title = 'Home'
+          } else {
+            title = pageContext.frontmatter.title
+          }
+        }
+
+        return (
+          <LayoutContainer>
+            <Header menuLinks={data.site.siteMetadata.menuLinks} />
+            <SEO title={title} />
+            {pageContext && pageContext.frontmatter && (
+              <Hero data={data_} pageContext={pageContext} />
+            )}
+            <main>{props.children}</main>
+            <Footer />
+          </LayoutContainer>
+        )
+      }}
     />
   )
 }
