@@ -5,6 +5,7 @@ summary: >
   A casual meetup based around developer side-projects.
   OpenHack Syracuse happens on the second tuesday of every month at Syracuse Coworks
 imgAlt: photo from OpenHack meetup
+type: meetup
 ---
 
 A casual meetup based around developer side-projects. OpenHack Syracuse happens on the second tuesday of every month at Syracuse Coworks.

@@ -2,6 +2,10 @@
 title: Developer Groups
 ---
 
+import GroupCards from '../../components/GroupCards'
+
+<GroupCards />
+
 If you'd like to start a meetup in Syracuse, please reach out to the organizers
 at Syracuse.io. We're happy to connect you with community members who might be
 interested in attending.

@@ -6,6 +6,7 @@ summary: >
   we welcome and encourage all proficiency levels.
   We meet on the third Tuesday of each month
 imgAlt: Syracuse JS Meetup logo
+type: meetup
 ---
 
 We are a group dedicated to discussing and working with the JavaScript programming language.

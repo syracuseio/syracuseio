@@ -6,6 +6,7 @@ summary: >
   Each workshop will have at least one mentor to provide support and answer questions.
   Although this group is geared towards women, anyone is welcome to attend our classes
 imgAlt: women typing at laptops
+type: meetup
 ---
 
 Women in Coding will be hosting workshop style classes once a month every

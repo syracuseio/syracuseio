@@ -7,6 +7,7 @@ summary: >
   come to Syracuse, NY, to share ideas, form teams, build projects,
   and win awesome prizes in 24 hours
 imgAlt: Hack Upstate Sign
+type: hackathon
 ---
 
 Advancing Upstate New York’s tech community through events and education.
