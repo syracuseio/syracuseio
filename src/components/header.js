@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
+import logo from '../images/logo.png';
 
 const Nav = styled.nav`
   background-color: #1b1b1b;
   border-bottom: 2px solid #474747;
-  padding: 0 20px;
+  padding: 20px 0;
   font-size: 12px;
   min-height: 50px;
 
@@ -39,6 +41,13 @@ const MenuItem = styled.li`
   line-height: 20px;
   height: 50px;
 `
+const Logo = styled.div`
+  width: 100px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  position:absolute;
+  margin-left: -50%;
+`
 
 const Header = ({ siteTitle, menuLinks }) => (
   <header>
@@ -53,9 +62,22 @@ const Header = ({ siteTitle, menuLinks }) => (
           </MenuItem>
         ))}
       </NavList>
+      <div style={{width: '100px',
+                   zIndex: '1000',
+                   marginTop: '-50px',
+                   position: 'absolute',
+                   left: '50%'}}>
+        <Logo>
+          <Link to="/">
+            <img src={logo} />
+          </Link>
+        </Logo>
+      </div>
     </Nav>
   </header>
 )
+
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
