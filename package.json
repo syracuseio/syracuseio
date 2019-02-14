@@ -21,7 +21,7 @@
     "gatsby-source-meetup": "^0.0.1",
     "gatsby-transformer-sharp": "^2.1.8",
     "moment": "^2.23.0",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-feather": "^1.1.5",
