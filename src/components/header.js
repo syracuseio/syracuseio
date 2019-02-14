@@ -40,7 +40,7 @@ const MenuItem = styled.li`
   height: 50px;
 `
 
-const Header = ({ siteTitle, menuLinks }) => (
+const Header = ({ menuLinks }) => (
   <header>
     <Nav>
       <NavList role="navigation">
