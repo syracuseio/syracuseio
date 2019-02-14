@@ -5247,14 +5247,14 @@ gatsby-plugin-catch-links@^2.0.9:
     "@babel/runtime" "^7.0.0"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-manifest@^2.0.9:
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.12.tgz#7e25f8997ea690969eeaa010a2d111209282f2ce"
-  integrity sha512-9gLSQDD7XF7EsnnDtGS0jAoHSC+R/zL0eHMo0tbpV9BiHPinZwdeOHGYSVzdzn9zwqkgoETbw1dY1sd+7o8+3g==
+gatsby-plugin-manifest@^2.0.17:
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.17.tgz#1e2c3329b1a58bdf77186866dd9e94da54ac6e68"
+  integrity sha512-8NMt34U4Qzo7LKctAtVdLbIVNPjHndCQ32MDm7BPfBMrqp61mhCLKZkZOuHLJiaoiBDQPW0AvXOL6nblUfv3wA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
-    sharp "^0.21.0"
+    sharp "^0.21.3"
 
 gatsby-plugin-page-creator@^2.0.5:
   version "2.0.5"
@@ -7934,7 +7934,7 @@ name-all-modules-plugin@^1.0.1:
   resolved "https://registry.yarnpkg.com/name-all-modules-plugin/-/name-all-modules-plugin-1.0.1.tgz#0abfb6ad835718b9fb4def0674e06657a954375c"
   integrity sha1-Cr+2rYNXGLn7Te8GdOBmV6lUN1w=
 
-nan@^2.11.1, nan@^2.9.2:
+nan@^2.12.1, nan@^2.9.2:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
   integrity sha512-JY7V6lRkStKcKTvHO5NVSQRv+RV+FIL5pvDoLiAtSL9pKlC5x9PKQcZDsq7m4FO4d57mkhC6Z+QhAh3Jdk5JFw==
@@ -10474,16 +10474,16 @@ shallowequal@^1.0.1, shallowequal@^1.0.2:
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
 
-sharp@^0.21.0:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.21.1.tgz#21e3f3a4271039b0e95ac3c58baea475ee6fb661"
-  integrity sha512-XPRi/nosSHk2GG6Zl+uquJ8vZ+00TpNjzrSKah4DGBHYXRxw7nixBBBewJtw3jetUJi0Oaw/n6AO3/myDVVqFg==
+sharp@^0.21.0, sharp@^0.21.3:
+  version "0.21.3"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.21.3.tgz#381937de66c123687f2ac7186f85921c6bb19cdd"
+  integrity sha512-5qZk8r+YgfyztLEKkNez20Wynq/Uh1oNyP5T/3gTYwt2lBYGs9iDs5m0yVsZEPm8eVBbAJhS08J1wp/g+Ai1Qw==
   dependencies:
     bindings "^1.3.1"
     color "^3.1.0"
     detect-libc "^1.0.3"
     fs-copy-file-sync "^1.1.1"
-    nan "^2.11.1"
+    nan "^2.12.1"
     npmlog "^4.1.2"
     prebuild-install "^5.2.2"
     semver "^5.6.0"
