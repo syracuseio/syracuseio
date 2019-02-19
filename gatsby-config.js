@@ -21,7 +21,6 @@ module.exports = {
         link: '/resources',
       },
     ],
-    logo: 'logo.png'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

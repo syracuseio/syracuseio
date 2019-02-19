@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
-import logo from '../images/logo.png';
+import logo from '../images/logo.svg';
 
 const Nav = styled.nav`
   background-color: #1b1b1b;
@@ -41,11 +41,19 @@ const MenuItem = styled.li`
   line-height: 20px;
   height: 50px;
 `
+
+const LogoWrapper = styled.div`
+  width: 100px;
+  z-index: 1000;
+  margin-top: -50px;
+  position: absolute;
+  left: 50%;
+`
+
 const Logo = styled.div`
   width: 100px;
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  position:absolute;
+  position: absolute;
   margin-left: -50%;
 `
 
@@ -62,17 +70,13 @@ const Header = ({ siteTitle, menuLinks }) => (
           </MenuItem>
         ))}
       </NavList>
-      <div style={{width: '100px',
-                   zIndex: '1000',
-                   marginTop: '-50px',
-                   position: 'absolute',
-                   left: '50%'}}>
+      <LogoWrapper>
         <Logo>
           <Link to="/">
             <img src={logo} />
           </Link>
         </Logo>
-      </div>
+      </LogoWrapper>
     </Nav>
   </header>
 )
