@@ -57,7 +57,7 @@ const Logo = styled.div`
   margin-left: -50%;
 `
 
-const Header = ({ siteTitle, menuLinks }) => (
+const Header = ({ menuLinks }) => (
   <header>
     <Nav>
       <NavList role="navigation">
