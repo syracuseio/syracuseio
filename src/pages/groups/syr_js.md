@@ -7,6 +7,7 @@ summary: >
   We meet on the third Tuesday of each month
 imgAlt: Syracuse JS Meetup logo
 type: meetup
+featuredImgUrl: 'syrjs.png'
 ---
 
 We are a group dedicated to discussing and working with the JavaScript programming language.
@@ -16,16 +17,3 @@ interactive portion. Whether you’re an experienced JavaScript programmer or ju
 we welcome and encourage all proficiency levels.
 
 Come join us if you’d like to learn, teach, or participate in our fun code challenges!
-
-import { graphql } from 'gatsby'
-export const PageQuery = graphql`
-  {
-    heroImage: file(relativePath: { eq: "syrjs.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

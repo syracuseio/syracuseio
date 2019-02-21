@@ -55,7 +55,7 @@ module.exports = {
         status: `upcoming,past`,
         desc: `true`,
         page: 200,
-      }
+      },
     },
     `gatsby-plugin-sharp`,
     {

@@ -20,7 +20,7 @@ const HeroContainer = styled.section`
     width: 100%;
     height: 100%;
     color: ${props => props.titleColor};
-    text-shadow: ${props => props.img ? '1px 1px 3px #000': 'unset'};
+    text-shadow: ${props => (props.img ? '1px 1px 3px #000' : 'unset')};
   }
 
   h1 {

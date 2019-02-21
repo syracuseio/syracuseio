@@ -2,9 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
-import logo from '../images/logo.svg';
+import logo from '../images/logo.svg'
 
 const Nav = styled.nav`
   background-color: #1b1b1b;
@@ -73,15 +72,13 @@ const Header = ({ menuLinks }) => (
       <LogoWrapper>
         <Logo>
           <Link to="/">
-            <img src={logo} />
+            <img src={logo} alt={'Syracuse.io code logo'} />
           </Link>
         </Logo>
       </LogoWrapper>
     </Nav>
   </header>
 )
-
-
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

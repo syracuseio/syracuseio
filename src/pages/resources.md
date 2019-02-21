@@ -1,6 +1,7 @@
 ---
 title: Dev Resources
 imgAlt: WebDev Books image
+featuredImgUrl: 'resources.jpg'
 ---
 
 The following is a list of Open Data and training opportunities for the Syracuse Developer.
@@ -16,16 +17,3 @@ The following is a list of Open Data and training opportunities for the Syracuse
 - **[Datacuse](http://data.syrgov.net)**: The city of Syracuse has made some of its data open and available for public usage. Find information on housing, infrastucture, violations, water quality, and more
 - **[Upstate Data Project](https://dataupstate.org/projects/)**: The renowned [Mark Headd](https://twitter.com/mheadd)'s various projects that make use of open data to Upstate NY
 - **[Health-e-CNY](http://www.healthecny.org/index.php?module=Tiles&controller=index&action=display&alias=OnondagaData)**: Interesting health data for CNY, specifically Onondaga County
-
-import { graphql } from 'gatsby'
-export const PageQuery = graphql`
-  {
-    heroImage: file(relativePath: { eq: "resources.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

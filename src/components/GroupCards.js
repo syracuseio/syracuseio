@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, StaticQuery, Link } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
-import clintonsquare from '../images/clintonsquare.jpg'
 
 const GroupContainer = styled.div`
   height: 450px;
@@ -11,9 +11,12 @@ const GroupContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  img {
+  div.gatsby-image-wrapper {
     height: 175px;
     margin-bottom: 10px;
+  }
+
+  img {
     object-fit: cover;
   }
 
@@ -83,6 +86,18 @@ const GroupGrid = styled.div`
 const GroupCards = () => {
   let query = graphql`
     {
+      allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 1920) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
       allMdx(filter: { fileAbsolutePath: { regex: "/src/pages/groups/" } }) {
         edges {
           node {
@@ -92,6 +107,7 @@ const GroupCards = () => {
               group
               summary
               type
+              featuredImgUrl
             }
           }
         }
@@ -117,12 +133,19 @@ const GroupCards = () => {
                 searchString.length
               let path = group.fileAbsolutePath.slice(newIndex, -3) + '/'
 
+              let img = data.allFile.edges.filter(
+                edge =>
+                  group.frontmatter.featuredImgUrl === edge.node.relativePath
+              )[0]
+
               return (
                 <GroupContainer>
                   {/* TODO: Replace with featuredImage */}
-                  <Link to={path}>
-                    <img src={clintonsquare} alt="" />
-                  </Link>
+                  {img && (
+                    <Link to={path}>
+                      <Img fluid={img.node.childImageSharp.fluid} alt="" />
+                    </Link>
+                  )}
                   <header>
                     <b>{group.frontmatter.title}</b>
                     <span className={`${group.frontmatter.type} label`}>

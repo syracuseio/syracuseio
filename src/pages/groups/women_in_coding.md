@@ -7,6 +7,7 @@ summary: >
   Although this group is geared towards women, anyone is welcome to attend our classes
 imgAlt: women typing at laptops
 type: meetup
+featuredImgUrl: 'womenincoding.jpg'
 ---
 
 Women in Coding will be hosting workshop style classes once a month every
@@ -20,16 +21,3 @@ support and answer questions.
 
 Although this group is geared towards women, anyone is welcome to attend
 our classes.
-
-import { graphql } from 'gatsby'
-export const PageQuery = graphql`
-  {
-    heroImage: file(relativePath: { eq: "womenincoding.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
