@@ -70,6 +70,15 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `open sans:700,800`,
+          `lora:400,400i,600,700,700i`
+        ]
+      }
+    },
     'gatsby-plugin-styled-components',
   ],
 }
