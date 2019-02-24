@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import logo from '../images/logo.svg';
 
@@ -10,13 +9,18 @@ const Nav = styled.nav`
   background-color: #1b1b1b;
   border-bottom: 2px solid #474747;
   padding: 20px 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 12px;
-  min-height: 50px;
 
   a {
     text-decoration: none;
-    font-weight: 700;
+    font-weight: bold;
     color: #f0f0f0;
+
+    &:hover {
+      color: #23527c;
+      text-decoration: none;
+    }
   }
 `
 
@@ -24,12 +28,10 @@ const NavList = styled.ul`
   display: flex;
   margin: 0;
   list-style: none;
-  letter-spacing: 1px;
 `
 
 const BrandItem = styled.li`
-  padding: 20px 15px;
-  height: 50px;
+  padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
   margin-right: auto;
@@ -37,9 +39,11 @@ const BrandItem = styled.li`
 
 const MenuItem = styled.li`
   text-transform: uppercase;
-  padding: 20px 15px;
-  line-height: 20px;
-  height: 50px;
+  padding: 15px 15px;
+  a {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
 `
 
 const LogoWrapper = styled.div`
@@ -73,7 +77,7 @@ const Header = ({ menuLinks }) => (
       <LogoWrapper>
         <Logo>
           <Link to="/">
-            <img src={logo} />
+            <img src={logo} width="100px"/>
           </Link>
         </Logo>
       </LogoWrapper>
