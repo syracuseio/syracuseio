@@ -6,8 +6,8 @@ import styled from 'styled-components'
 import Header from './header'
 import Hero from './hero'
 import Footer from './footer'
-import './layout.css'
 import SEO from './seo'
+import GlobalStyle from './GlobalStyle'
 
 const LayoutContainer = styled.div`
   /* adding flexbox container to layout so the footer will be pushed to the bottom of the viewport / page no matter what */
@@ -18,12 +18,19 @@ const LayoutContainer = styled.div`
   main {
     flex: 1 0 auto;
     margin: 0 auto;
-    max-width: 960px;
-    padding: 50px 1rem;
-  }
+    max-width: 750px;
 
-  footer {
-    flex-shrink: 0;
+    ul {
+      display: block;
+      list-style-type: disc;
+    }
+    li {
+      display: list-item;
+      text-align: -webkit-match-parent;
+      margin-left: 2em;
+      padding-left: 5px;
+      padding-bottom: 0.5em;
+    }
   }
 `
 
@@ -59,6 +66,7 @@ const Layout = props => {
 
         return (
           <LayoutContainer>
+            <GlobalStyle />
             <Header menuLinks={data.site.siteMetadata.menuLinks} />
             <SEO title={title} />
             {pageContext && pageContext.frontmatter && (

@@ -6,7 +6,9 @@ import styled, { css } from 'styled-components'
 
 const HeroContainer = styled.section`
   position: relative;
-  height: ${props => (props.img !== undefined ? '450px' : '300px')};
+  height: ${props => (props.img !== undefined ? '450px' : '122px')};
+  margin-top: ${props => (props.img !== undefined ? '0' : '45px')};
+  margin-bottom: ${props => (props.img !== undefined ? '35px' : '0')};
 
   .container {
     position: absolute;
@@ -23,21 +25,15 @@ const HeroContainer = styled.section`
     text-shadow: ${props => props.img ? '1px 1px 3px #000': 'unset'};
   }
 
-  h1 {
-    font-size: 80px;
-  }
-
-  h2 {
-    font-size: 30px;
-    font-weight: 300;
-  }
-
   hr {
     max-width: 150px;
+    width: 100px;
+    box-shadow: 1px 1px 3px #000;
     margin-top: -10px;
+    margin-bottom: 10px;
     margin-right: auto;
     margin-left: auto;
-    height: 5px;
+    border-width: 4px;
     border-radius: 3px;
     border-color: ${props => props.titleColor};
     background: ${props => props.titleColor};
@@ -45,7 +41,11 @@ const HeroContainer = styled.section`
       props.img &&
       css`
         box-shadow: 1px 1px 3px #000;
-      `};
+    `};
+  }
+
+  h1, h2 {
+    margin-top: 0;
   }
 
   .heroImage {
@@ -73,14 +73,18 @@ function Hero(props) {
   let heroImage =
     props.data && props.data.heroImage ? props.data.heroImage : undefined
 
-  let titleColor = heroImage !== undefined ? 'white' : 'black'
+  let titleColor = heroImage !== undefined ? 'white' : 'inherit'
 
   return (
     <HeroContainer img={heroImage} titleColor={titleColor}>
       <div className="container">
         <h1>{frontmatter.title}</h1>
-        <hr />
-        {frontmatter.subtitle && <h2>{frontmatter.subtitle}</h2>}
+        {frontmatter.subtitle && (
+          <React.Fragment>
+            <hr/>
+            <h2>{frontmatter.subtitle}</h2>
+          </React.Fragment>
+        )}
       </div>
       {heroImage && (
         <Img

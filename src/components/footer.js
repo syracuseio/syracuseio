@@ -7,21 +7,21 @@ import { Link } from 'gatsby'
 const StyledFooter = styled.footer`
   border-top: 2px solid #d44500;
   background: #f5f5f5;
+  padding: 30px 0;
+  margin-top: auto;
+  flex-shrink: 0;
+
+  a {
+    color: #404040;
+    &:hover {
+      color: #23527c;
+    }
+  }
 
   .container {
     max-width: 960px;
     margin: 30px auto;
     color: #777;
-  }
-
-  .container a {
-    color: #404040;
-    text-decoration: none;
-  }
-
-  .container a:hover {
-    color: #0085a1;
-    text-decoration: underline;
   }
 
   .flex-center {
@@ -38,7 +38,7 @@ const StyledFooter = styled.footer`
   }
 
   a.socialmedia-image-link {
-    padding: 16px;
+    padding: 14px;
     background: #404040;
     border-radius: 40px;
     display: inline-flex;
@@ -49,6 +49,14 @@ const StyledFooter = styled.footer`
 
   a.socialmedia-image-link:last-of-type {
     margin-right: 0;
+  }
+
+  .copyright {
+    margin-bottom: 0;
+  }
+
+  .made-by {
+    margin: 10px 0 0;
   }
 `
 
@@ -69,10 +77,10 @@ const Footer = () => (
           <Twitter color="white" />
         </a>
       </p>
-      <p className="center">
+      <p className="center copyright">
         {new Date().getFullYear()} {` • `} <Link to="/">Syracuse.io</Link>
       </p>
-      <p className="center font-small">
+      <p className="center font-small made-by">
         Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
