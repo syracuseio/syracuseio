@@ -34,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
+        name: `content`,
+        path: `${__dirname}/src/content`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -55,7 +55,7 @@ module.exports = {
         status: `upcoming,past`,
         desc: `true`,
         page: 200,
-      }
+      },
     },
     `gatsby-plugin-sharp`,
     {
@@ -73,11 +73,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `open sans:700,800`,
-          `lora:400,400i,600,700,700i`
-        ]
-      }
+        fonts: [`open sans:700,800`, `lora:400,400i,600,700,700i`],
+      },
     },
     'gatsby-plugin-styled-components',
   ],
