@@ -55,11 +55,13 @@ const Layout = props => {
       render={({ site }) => {
         let title
 
-        if (frontmatter.title === site.siteMetadata.title) {
-          // Set the title for the homepage to be "Home"
-          title = 'Home'
-        } else {
-          title = frontmatter.title
+        if (frontmatter && frontmatter.title) {
+          if (frontmatter.title === site.siteMetadata.title) {
+            // Set the title for the homepage to be "Home"
+            title = 'Home'
+          } else {
+            title = frontmatter.title
+          }
         }
 
         return (
