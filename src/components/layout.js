@@ -35,7 +35,7 @@ const LayoutContainer = styled.div`
 `
 
 const Layout = props => {
-  let { pageContext, frontmatter } = props
+  let { frontmatter } = props
 
   return (
     <StaticQuery
@@ -55,13 +55,11 @@ const Layout = props => {
       render={({ site }) => {
         let title
 
-        if (pageContext) {
+        if (frontmatter.title === site.siteMetadata.title) {
           // Set the title for the homepage to be "Home"
-          if (pageContext.frontmatter.title === site.siteMetadata.title) {
-            title = 'Home'
-          } else {
-            title = pageContext.frontmatter.title
-          }
+          title = 'Home'
+        } else {
+          title = frontmatter.title
         }
 
         return (
