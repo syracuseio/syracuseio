@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Img from 'gatsby-image'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const HeroContainer = styled.section`
   position: relative;
-  height: ${props => (props.img !== undefined ? '450px' : '122px')};
-  margin-top: ${props => (props.img !== undefined ? '0' : '45px')};
-  margin-bottom: ${props => (props.img !== undefined ? '35px' : '0')};
+  height: ${props => (props.img ? '450px' : '122px')};
+  margin-top: ${props => (props.img ? '0' : '45px')};
+  margin-bottom: ${props => (props.img ? '35px' : '0')};
 
   .container {
     position: absolute;
@@ -22,7 +22,7 @@ const HeroContainer = styled.section`
     width: 100%;
     height: 100%;
     color: ${props => props.titleColor};
-    text-shadow: ${props => props.img ? '1px 1px 3px #000': 'unset'};
+    text-shadow: ${props => (props.img ? '1px 1px 3px #000' : 'unset')};
   }
 
   hr {
@@ -37,14 +37,11 @@ const HeroContainer = styled.section`
     border-radius: 3px;
     border-color: ${props => props.titleColor};
     background: ${props => props.titleColor};
-    ${props =>
-      props.img &&
-      css`
-        box-shadow: 1px 1px 3px #000;
-    `};
+    box-shadow: ${props => (props.img ? '1px 1px 3px #000' : 'unset')};
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     margin-top: 0;
   }
 
@@ -66,31 +63,29 @@ const HeroContainer = styled.section`
 `
 
 function Hero(props) {
-  let frontmatter = props.pageContext
-    ? props.pageContext.frontmatter
-    : undefined
+  if (props.frontmatter === undefined) {
+    return null
+  }
+  let { title, subtitle, img, imgAlt } = props.frontmatter
 
-  let heroImage =
-    props.data && props.data.heroImage ? props.data.heroImage : undefined
-
-  let titleColor = heroImage !== undefined ? 'white' : 'inherit'
+  let titleColor = img ? 'white' : 'inherit'
 
   return (
-    <HeroContainer img={heroImage} titleColor={titleColor}>
+    <HeroContainer img={img} titleColor={titleColor}>
       <div className="container">
-        <h1>{frontmatter.title}</h1>
-        {frontmatter.subtitle && (
+        <h1>{title}</h1>
+        {subtitle && (
           <React.Fragment>
-            <hr/>
-            <h2>{frontmatter.subtitle}</h2>
+            <hr />
+            <h2>{subtitle}</h2>
           </React.Fragment>
         )}
       </div>
-      {heroImage && (
+      {img && (
         <Img
           className="heroImage"
-          fluid={heroImage.childImageSharp.fluid}
-          alt={frontmatter.imgAlt}
+          fluid={img.childImageSharp.fluid}
+          alt={imgAlt}
         />
       )}
     </HeroContainer>
@@ -98,15 +93,11 @@ function Hero(props) {
 }
 
 Hero.propTypes = {
-  data: PropTypes.shape({
-    heroImage: PropTypes.object,
-  }),
-  pageContext: PropTypes.shape({
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      subtitle: PropTypes.string,
-      imgAlt: PropTypes.string,
-    }),
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
+    img: PropTypes.object,
+    imgAlt: PropTypes.string,
   }),
 }
 

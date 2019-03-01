@@ -1,5 +1,6 @@
 ---
 title: Community
+img: '../images/openhack-august-15.jpg'
 imgAlt: OpenHack meetup
 ---
 
@@ -50,16 +51,3 @@ You'll also find rooms for specific languages or topics. Check out what's happen
 </p>
 
 </div>
-
-import { graphql } from 'gatsby'
-export const PageQuery = graphql`
-  {
-    heroImage: file(relativePath: { eq: "openhack-august-15.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

@@ -5,6 +5,7 @@ summary: >
   or work through an online curriculum at their own pace.
   Each workshop will have at least one mentor to provide support and answer questions.
   Although this group is geared towards women, anyone is welcome to attend our classes
+img: '../../images/womenincoding.jpg'
 imgAlt: women typing at laptops
 ---
 
@@ -19,16 +20,3 @@ support and answer questions.
 
 Although this group is geared towards women, anyone is welcome to attend
 our classes.
-
-import { graphql } from 'gatsby'
-export const PageQuery = graphql`
-  {
-    heroImage: file(relativePath: { eq: "womenincoding.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

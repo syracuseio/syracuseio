@@ -1,6 +1,7 @@
 ---
 title: Syracuse.io
 subtitle: Your local developer community
+img: '../images/clintonsquare.jpg'
 imgAlt: Historic photo of Clinton Square in Downtown Syracuse
 ---
 
@@ -24,16 +25,3 @@ Take a look at our upcoming events below, join us in slack,
 and join our friendly community of Syracuse devs.
 
 <UpcomingMeetups />
-
-import { graphql } from 'gatsby'
-export const PageQuery = graphql`
-  {
-    heroImage: file(relativePath: { eq: "clintonsquare.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

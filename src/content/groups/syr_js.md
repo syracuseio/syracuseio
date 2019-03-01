@@ -5,6 +5,7 @@ summary: >
   Whether you’re an experienced JavaScript programmer or just getting started,
   we welcome and encourage all proficiency levels.
   We meet on the third Tuesday of each month
+img: '../../images/syrjs.png'
 imgAlt: Syracuse JS Meetup logo
 ---
 
@@ -15,16 +16,3 @@ interactive portion. Whether you’re an experienced JavaScript programmer or ju
 we welcome and encourage all proficiency levels.
 
 Come join us if you’d like to learn, teach, or participate in our fun code challenges!
-
-import { graphql } from 'gatsby'
-export const PageQuery = graphql`
-  {
-    heroImage: file(relativePath: { eq: "syrjs.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

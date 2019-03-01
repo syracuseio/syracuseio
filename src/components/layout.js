@@ -35,7 +35,7 @@ const LayoutContainer = styled.div`
 `
 
 const Layout = props => {
-  let { data: data_, pageContext } = props
+  let { frontmatter } = props
 
   return (
     <StaticQuery
@@ -52,26 +52,24 @@ const Layout = props => {
           }
         }
       `}
-      render={data => {
+      render={({ site }) => {
         let title
 
-        if (pageContext) {
-          // Set the title for the homepage to be "Home"
-          if (pageContext.frontmatter.title === data.site.siteMetadata.title) {
+        if (frontmatter && frontmatter.title) {
+          if (frontmatter.title === site.siteMetadata.title) {
+            // Set the title for the homepage to be "Home"
             title = 'Home'
           } else {
-            title = pageContext.frontmatter.title
+            title = frontmatter.title
           }
         }
 
         return (
           <LayoutContainer>
             <GlobalStyle />
-            <Header menuLinks={data.site.siteMetadata.menuLinks} />
+            <Header menuLinks={site.siteMetadata.menuLinks} />
             <SEO title={title} />
-            {pageContext && pageContext.frontmatter && (
-              <Hero data={data_} pageContext={pageContext} />
-            )}
+            <Hero frontmatter={frontmatter} />
             <main>{props.children}</main>
             <Footer />
           </LayoutContainer>
