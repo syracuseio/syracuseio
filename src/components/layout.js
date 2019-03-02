@@ -56,6 +56,7 @@ const Layout = props => {
       `}
       render={({ site }) => {
         let title
+        let isWide
 
         if (frontmatter && frontmatter.title) {
           if (frontmatter.title === site.siteMetadata.title) {
@@ -64,10 +65,14 @@ const Layout = props => {
           } else {
             title = frontmatter.title
           }
+
+          if (frontmatter.wide) {
+            isWide = true
+          }
         }
 
         return (
-          <LayoutContainer wide={frontmatter.wide}>
+          <LayoutContainer wide={isWide}>
             <GlobalStyle />
             <Header menuLinks={site.siteMetadata.menuLinks} />
             <SEO title={title} />
