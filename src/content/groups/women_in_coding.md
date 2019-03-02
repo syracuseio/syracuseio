@@ -7,6 +7,7 @@ summary: >
   Although this group is geared towards women, anyone is welcome to attend our classes
 img: '../../images/womenincoding.jpg'
 imgAlt: women typing at laptops
+groupType: meetup
 ---
 
 Women in Coding will be hosting workshop style classes once a month every

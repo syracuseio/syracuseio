@@ -20,6 +20,8 @@ const LayoutContainer = styled.div`
     margin: 0 auto;
     max-width: 750px;
 
+    max-width: ${props => props.wide && '1200px'};
+
     ul {
       display: block;
       list-style-type: disc;
@@ -65,7 +67,7 @@ const Layout = props => {
         }
 
         return (
-          <LayoutContainer>
+          <LayoutContainer wide={frontmatter.wide}>
             <GlobalStyle />
             <Header menuLinks={site.siteMetadata.menuLinks} />
             <SEO title={title} />
