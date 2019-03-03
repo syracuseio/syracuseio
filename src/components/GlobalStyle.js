@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
+export const BREAKPOINT_SMALL_SCREEN = '768px'
+
 const GlobalStyle = createGlobalStyle`
   ${reset}
 

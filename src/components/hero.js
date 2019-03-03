@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import { BREAKPOINT_SMALL_SCREEN } from './GlobalStyle'
 
 const HeroContainer = styled.section`
   position: relative;
@@ -49,7 +50,7 @@ const HeroContainer = styled.section`
     height: 100%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${BREAKPOINT_SMALL_SCREEN}) {
     height: 300px;
 
     h1 {
