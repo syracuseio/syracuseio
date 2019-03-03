@@ -18,9 +18,7 @@ const LayoutContainer = styled.div`
   main {
     flex: 1 0 auto;
     margin: 0 auto;
-    max-width: 750px;
-
-    max-width: ${props => props.wide && '1200px'};
+    max-width: ${props => props.wide ? '1200px' : '750px'};
 
     ul {
       display: block;
