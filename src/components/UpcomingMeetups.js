@@ -81,7 +81,7 @@ function UpcomingMeetups() {
                     <a href={node.link}>{node.name}</a>
                   </h4>
                   <blockquote>
-                    <p>{description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: description }} />
                   </blockquote>
                   {idx !== meetups.length - 1 && <hr />}
                 </EventContainer>
