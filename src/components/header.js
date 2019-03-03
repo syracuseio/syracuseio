@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { BREAKPOINT_SMALL_SCREEN } from './GlobalStyle'
+import { BREAKPOINT_SMALL, BREAKPOINT_MEDIUM } from './GlobalStyle'
 import logo from '../images/logo.svg'
 
 const Nav = styled.nav`
@@ -25,7 +25,7 @@ const Nav = styled.nav`
     }
   }
 
-  @media (max-width: ${BREAKPOINT_SMALL_SCREEN}) {
+  @media (max-width: ${BREAKPOINT_MEDIUM}) {
     padding: 0;
   }
 `
@@ -51,7 +51,7 @@ const MenuItem = styled.li`
     font-size: 12px;
   }
 
-  @media (max-width: ${BREAKPOINT_SMALL_SCREEN}) {
+  @media (max-width: ${BREAKPOINT_MEDIUM}) {
     padding: 15px 4px;
   }
 `
@@ -63,8 +63,12 @@ const LogoWrapper = styled.div`
   position: absolute;
   left: 50%;
 
-  @media (max-width: ${BREAKPOINT_SMALL_SCREEN}) {
+  @media (max-width: ${BREAKPOINT_MEDIUM}) {
     margin-top: -25px;
+  }
+
+  @media (max-width: ${BREAKPOINT_SMALL}) {
+    visibility: hidden;
   }
 `
 
@@ -74,12 +78,12 @@ const Logo = styled.div`
   position: absolute;
   margin-left: -50%;
 
-  @media (max-width: ${BREAKPOINT_SMALL_SCREEN}) {
+  @media (max-width: ${BREAKPOINT_MEDIUM}) {
     margin-left: -25%;
   }
   img {
     width: 100px;
-    @media (max-width: ${BREAKPOINT_SMALL_SCREEN}) {
+    @media (max-width: ${BREAKPOINT_MEDIUM}) {
       width:50px;
     }
   }
