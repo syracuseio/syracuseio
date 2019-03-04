@@ -19,6 +19,7 @@ const LayoutContainer = styled.div`
     flex: 1 0 auto;
     margin: 0 auto;
     max-width: 750px;
+    width: 100%;
 
     ul {
       display: block;
@@ -30,6 +31,9 @@ const LayoutContainer = styled.div`
       margin-left: 2em;
       padding-left: 5px;
       padding-bottom: 0.5em;
+    }
+    .container {
+      padding: 0 15px;
     }
   }
 `
@@ -70,7 +74,11 @@ const Layout = props => {
             <Header menuLinks={site.siteMetadata.menuLinks} />
             <SEO title={title} />
             <Hero frontmatter={frontmatter} />
-            <main>{props.children}</main>
+            <main>
+              <div className="container">
+                {props.children}
+              </div>
+            </main>
             <Footer />
           </LayoutContainer>
         )
