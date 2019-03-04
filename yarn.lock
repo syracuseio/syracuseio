@@ -5272,10 +5272,10 @@ gatsby-plugin-react-helmet@^3.0.2:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-sharp@^2.0.14:
-  version "2.0.16"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.16.tgz#3f65fce65a0ec33a533e909706d3638a84fae2e7"
-  integrity sha512-jYOIq974tbw6/0IY820tHdtZNUfQc/hyV2tDPwZ5L6yb4bm00b5d5cq2ic8TcxxmL7YNZn04vbODvRJC9YRwAg==
+gatsby-plugin-sharp@^2.0.24:
+  version "2.0.24"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.24.tgz#88c6b1adc66690f675c589283b8da68243c32e98"
+  integrity sha512-E8iyvE39FAgCanCXywcxgPlng/ompsoGLicijz4icfsy4I//8agVqpILZ32zbZ6bb1v+D/Pgh5QRjlUzaPIorg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
@@ -5291,7 +5291,7 @@ gatsby-plugin-sharp@^2.0.14:
     potrace "^2.1.1"
     probe-image-size "^4.0.0"
     progress "^1.1.8"
-    sharp "^0.21.0"
+    sharp "^0.21.3"
     svgo "^0.7.2"
 
 gatsby-plugin-styled-components@^3.0.4:
