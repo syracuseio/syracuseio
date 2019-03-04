@@ -14,7 +14,7 @@
     "gatsby-mdx": "^0.4.0",
     "gatsby-plugin-catch-links": "^2.0.11",
     "gatsby-plugin-google-fonts": "^0.0.4",
-    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-manifest": "^2.0.21",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sharp": "^2.0.14",
     "gatsby-plugin-styled-components": "^3.0.4",

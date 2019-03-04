@@ -5241,10 +5241,10 @@ gatsby-plugin-google-fonts@^0.0.4:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-0.0.4.tgz#dc1402a71f27c3ae6caee10777d10adadf74bd7c"
   integrity sha512-B9Q+dznk6UX2Fe7QyCTptiuLT+ZLtdFBs1lg5kvaVDyIlesEA2rSQqtB7IkEQflH91JPE4eAEM699JCPy7CFGg==
 
-gatsby-plugin-manifest@^2.0.17:
-  version "2.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.17.tgz#1e2c3329b1a58bdf77186866dd9e94da54ac6e68"
-  integrity sha512-8NMt34U4Qzo7LKctAtVdLbIVNPjHndCQ32MDm7BPfBMrqp61mhCLKZkZOuHLJiaoiBDQPW0AvXOL6nblUfv3wA==
+gatsby-plugin-manifest@^2.0.21:
+  version "2.0.21"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.21.tgz#58f037ae1a279735704debf05612827356ec10a5"
+  integrity sha512-4O6AW+5WP1Qc6EeLwg9FFPo/P3lprOxEn6bfTue/Yt11/FQDkPfEhXjR6i0CLQCE2prddMFbTNojDdKW2+9qrQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
