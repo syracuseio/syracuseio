@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import { BREAKPOINT_MEDIUM } from './GlobalStyle'
 
 const HeroContainer = styled.section`
   position: relative;
@@ -43,19 +44,18 @@ const HeroContainer = styled.section`
   h1,
   h2 {
     margin-top: 0;
+    text-align: center;
   }
 
   .heroImage {
     height: 100%;
   }
 
-  @media (max-width: 768px) {
-    height: 300px;
-
+  @media (max-width: ${BREAKPOINT_MEDIUM}) {
+    //height: 300px;
     h1 {
       font-size: 50px;
     }
-
     h2 {
       font-size: 27px;
     }
