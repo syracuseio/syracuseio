@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const GroupContainer = styled.div`
-  height: 475px;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -14,6 +13,8 @@ const GroupContainer = styled.div`
   div.gatsby-image-wrapper {
     height: 175px;
     margin-bottom: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 
   img {
@@ -54,9 +55,9 @@ const GroupContainer = styled.div`
     color: #777;
     flex-grow: 1;
     padding: 0 10px;
-    margin-bottom: 0;
     font-size: 16px;
     margin-top: 0;
+    margin-bottom: 20px;
   }
 
   .bottom {
@@ -64,6 +65,8 @@ const GroupContainer = styled.div`
     padding: 7px;
     display: flex;
     justify-content: flex-end;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 
   .bottom a {
@@ -82,7 +85,7 @@ const GroupGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 30px;
-  margin: 20px 0;
+  margin: 20px 10px;
 `
 
 const GroupCards = () => {
@@ -92,6 +95,7 @@ const GroupCards = () => {
         {
           allMdx(
             filter: { fileAbsolutePath: { regex: "/src/content/groups/" } }
+            sort: { fields: frontmatter___title }
           ) {
             edges {
               node {
