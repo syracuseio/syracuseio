@@ -16,7 +16,7 @@
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-manifest": "^2.0.21",
     "gatsby-plugin-react-helmet": "^3.0.7",
-    "gatsby-plugin-sharp": "^2.0.24",
+    "gatsby-plugin-sharp": "^2.0.25",
     "gatsby-plugin-styled-components": "^3.0.6",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-source-meetup": "^0.0.1",
