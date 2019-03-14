@@ -13,8 +13,7 @@ This is your one stop for information on [local meet ups](/groups/), lists of [l
 resources](/resources/), an active slack [community](/community/), and more to come.
 
 Whether you are new to the area or a seasoned veteran, please check
-out [tech meetups](/groups), join our
-[mailing list](https://tinyletter.com/syracuseio), and hang out
+out [tech meetups](/groups) and hang out
 with our [local slack group](//slackacuse.herokuapp.com)
 
 <center>
