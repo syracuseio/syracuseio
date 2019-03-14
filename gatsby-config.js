@@ -80,5 +80,11 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/images/favicon.png",
+      }
+    }
   ],
 }
