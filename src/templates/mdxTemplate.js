@@ -18,6 +18,7 @@ export const PageQuey = graphql`
       frontmatter {
         title
         subtitle
+        wide
         imgAlt
         img {
           childImageSharp {

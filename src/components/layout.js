@@ -18,8 +18,9 @@ const LayoutContainer = styled.div`
   main {
     flex: 1 0 auto;
     margin: 0 auto;
-    max-width: 750px;
+    max-width: ${props => props.wide ? '1200px' : '750px'};
     width: 100%;
+
 
     ul {
       display: block;
@@ -58,6 +59,7 @@ const Layout = props => {
       `}
       render={({ site }) => {
         let title
+        let isWide
 
         if (frontmatter && frontmatter.title) {
           if (frontmatter.title === site.siteMetadata.title) {
@@ -66,10 +68,14 @@ const Layout = props => {
           } else {
             title = frontmatter.title
           }
+
+          if (frontmatter.wide) {
+            isWide = true
+          }
         }
 
         return (
-          <LayoutContainer>
+          <LayoutContainer wide={isWide}>
             <GlobalStyle />
             <Header menuLinks={site.siteMetadata.menuLinks} />
             <SEO title={title} />

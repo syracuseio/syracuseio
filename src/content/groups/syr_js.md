@@ -7,6 +7,7 @@ summary: >
   We meet on the third Tuesday of each month
 img: '../../images/syrjs.png'
 imgAlt: Syracuse JS Meetup logo
+groupType: meetup
 ---
 
 We are a group dedicated to discussing and working with the JavaScript programming language.
