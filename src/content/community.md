@@ -11,7 +11,6 @@ You can join the community by:
 
 - Attending one of the [in-person events](/groups)
 - Joining our active slack group ([get your invite here](https://slackacuse.herokuapp.com))
-- Signing up for our [monthly email](https://tinyletter.com/syracuseio) newsletter
 
 ---
 
