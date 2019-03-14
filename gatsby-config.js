@@ -7,6 +7,7 @@ module.exports = {
     title: `Syracuse.io`,
     description: `Your local developer community.`,
     author: `@syracuseio`,
+    siteUrl: 'https://syracuse.io',
     menuLinks: [
       {
         name: 'Community',
@@ -77,5 +78,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
   ],
 }
