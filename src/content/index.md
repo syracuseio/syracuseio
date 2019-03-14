@@ -20,7 +20,6 @@ with our [local slack group](//slackacuse.herokuapp.com)
   <script async defer src="https://syracuseio.now.sh/slackin.js?large" />
 </center>
 
-Take a look at our upcoming events below, join us in slack,
-and join our friendly community of Syracuse devs.
+Take a look at our upcoming events below:
 
 <UpcomingMeetups />
