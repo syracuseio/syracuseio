@@ -1,5 +1,6 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const moment = require('moment')
 
 exports.onCreateNode = ({ actions, node, getNode }) => {
   if (node.internal.type === 'Mdx') {
@@ -12,6 +13,21 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
       node,
       name: 'slug',
       value: slug,
+    })
+  }
+
+  if (node.internal.type === 'EventsJson') {
+    let today = moment()
+
+    let status =
+      today.diff(moment(node.local_date, 'YYYY-MM-DD'), 'days') >= 0
+        ? `past`
+        : `upcoming`
+
+    actions.createNodeField({
+      node,
+      name: `status`,
+      value: status,
     })
   }
 }
