@@ -23,7 +23,7 @@ const query = graphql`
     allMeetupEvent(
       filter: { status: { eq: "upcoming" } }
       sort: { fields: local_date }
-      limit: 3
+      limit: 20
     ) {
       edges {
         node {
@@ -32,6 +32,27 @@ const query = graphql`
           description
           local_date
           link
+          internal {
+            type
+          }
+        }
+      }
+    }
+    allEventsJson(
+      filter: { fields: { status: { eq: "upcoming" } } }
+      sort: { fields: local_date }
+      limit: 20
+    ) {
+      edges {
+        node {
+          id
+          name
+          local_date
+          description
+          link
+          internal {
+            type
+          }
         }
       }
     }
@@ -63,11 +84,37 @@ function UpcomingMeetups() {
       query={query}
       render={data => {
         let meetups = data.allMeetupEvent.edges
+        let staticEvents = data.allEventsJson.edges
+
+        let sixWeeksMoment = moment().add(6, 'weeks')
+
+        meetups = meetups.filter(evt => {
+          let evtDate = moment(evt.node.local_date, 'YYYY-MM-DD')
+          return sixWeeksMoment.diff(evtDate) >= 0
+        })
+
+        staticEvents = staticEvents.filter(evt => {
+          let evtDate = moment(evt.node.local_date, 'YYYY-MM-DD')
+          return sixWeeksMoment.diff(evtDate) >= 0
+        })
+
+        meetups.push(...staticEvents)
+
+        meetups.sort((a, b) => {
+          let aMoment = moment(a.node.local_date, 'YYYY-MM-DD')
+          let bMoment = moment(b.node.local_date, 'YYYY-MM-DD')
+
+          return aMoment.diff(bMoment)
+        })
+
         return (
           <>
             <h2>Upcoming developer events</h2>
             {meetups.map(({ node }, idx) => {
-              let description = parseDescription(node.description)
+              let description =
+                node.internal.type === 'MeetupEvent'
+                  ? parseDescription(node.description)
+                  : node.description
               let parsedDate = moment(node.local_date, 'YYYY-MM-DD').format(
                 'dddd, MMMM Do, YYYY'
               )

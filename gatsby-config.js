@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,6 +38,13 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `staticEvents`,
+        path: `${__dirname}/src/events`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -79,6 +87,6 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
   ],
 }
