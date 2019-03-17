@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { GitHub, Twitter } from 'react-feather'
+import { GitHub, Twitter, Slack } from 'react-feather'
 import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
@@ -75,6 +75,12 @@ const Footer = () => (
           className="socialmedia-image-link"
         >
           <Twitter color="white" />
+        </a>
+        <a
+          href="https://slackacuse.herokuapp.com/"
+          className="socialmedia-image-link"
+        >
+          <Slack color="white" />
         </a>
       </p>
       <p className="center copyright">
