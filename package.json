@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^0.20.1",
-    "@mdx-js/tag": "^0.18.0",
+    "@mdx-js/tag": "^0.20.3",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.1.32",
     "gatsby-cli": "^2.4.12",
