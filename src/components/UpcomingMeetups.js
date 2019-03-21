@@ -20,10 +20,10 @@ const EventContainer = styled.div`
 
 const query = graphql`
   {
-    allMeetupEvent(
+    allSyrEvent(
       filter: { status: { eq: "upcoming" } }
       sort: { fields: local_date }
-      limit: 20
+      limit: 30
     ) {
       edges {
         node {
@@ -32,27 +32,6 @@ const query = graphql`
           description
           local_date
           link
-          internal {
-            type
-          }
-        }
-      }
-    }
-    allEventsJson(
-      filter: { fields: { status: { eq: "upcoming" } } }
-      sort: { fields: local_date }
-      limit: 20
-    ) {
-      edges {
-        node {
-          id
-          name
-          local_date
-          description
-          link
-          internal {
-            type
-          }
         }
       }
     }
@@ -64,6 +43,9 @@ const query = graphql`
  * @param {string} desc - html string recieved from Meetup API
  */
 function parseDescription(desc) {
+  // If desc is not html, pass it through
+  if (desc[0] !== '<') return desc
+
   let findStr = "What we'll do<br/>"
 
   let idx = desc.indexOf(findStr)
@@ -83,9 +65,7 @@ function UpcomingMeetups() {
     <StaticQuery
       query={query}
       render={data => {
-        let meetups = data.allMeetupEvent.edges
-        let staticEvents = data.allEventsJson.edges
-
+        let meetups = data.allSyrEvent.edges
         let sixWeeksMoment = moment().add(6, 'weeks')
 
         meetups = meetups.filter(evt => {
@@ -93,28 +73,11 @@ function UpcomingMeetups() {
           return sixWeeksMoment.diff(evtDate) >= 0
         })
 
-        staticEvents = staticEvents.filter(evt => {
-          let evtDate = moment(evt.node.local_date, 'YYYY-MM-DD')
-          return sixWeeksMoment.diff(evtDate) >= 0
-        })
-
-        meetups.push(...staticEvents)
-
-        meetups.sort((a, b) => {
-          let aMoment = moment(a.node.local_date, 'YYYY-MM-DD')
-          let bMoment = moment(b.node.local_date, 'YYYY-MM-DD')
-
-          return aMoment.diff(bMoment)
-        })
-
         return (
           <>
             <h2>Upcoming developer events</h2>
             {meetups.map(({ node }, idx) => {
-              let description =
-                node.internal.type === 'MeetupEvent'
-                  ? parseDescription(node.description)
-                  : node.description
+              let description = parseDescription(node.description)
               let parsedDate = moment(node.local_date, 'YYYY-MM-DD').format(
                 'dddd, MMMM Do, YYYY'
               )
