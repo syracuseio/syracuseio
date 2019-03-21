@@ -2,7 +2,13 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const moment = require('moment')
 
-exports.onCreateNode = ({ actions, node, getNode }) => {
+exports.onCreateNode = ({
+  actions,
+  node,
+  getNode,
+  createNodeId,
+  createContentDigest,
+}) => {
   if (node.internal.type === 'Mdx') {
     const slug = createFilePath({
       node,
@@ -29,6 +35,52 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
       name: `status`,
       value: status,
     })
+
+    let nodeId = createNodeId(`event-j-${node.id}`)
+    let data = {
+      name: node.name,
+      status: status,
+      local_date: node.local_date,
+      description: node.description,
+      link: node.link,
+    }
+    const nodeContent = JSON.stringify(data)
+    const nodeData = Object.assign({}, data, {
+      id: nodeId,
+      parent: null,
+      children: [],
+      internal: {
+        type: `SyrEvent`,
+        content: nodeContent,
+        contentDigest: createContentDigest(data),
+      },
+    })
+
+    actions.createNode(nodeData)
+  }
+
+  if (node.internal.type === `MeetupEvent`) {
+    let nodeId = createNodeId(`event-m-${node.id}`)
+    let data = {
+      name: node.name,
+      status: node.status,
+      local_date: node.local_date,
+      description: node.description,
+      link: node.link,
+    }
+    const nodeContent = JSON.stringify(data)
+    const nodeData = Object.assign({}, data, {
+      id: nodeId,
+      parent: null,
+      children: [],
+      internal: {
+        type: `SyrEvent`,
+        content: nodeContent,
+        contentDigest: createContentDigest(data),
+      },
+    })
+
+    actions.createNode(nodeData)
   }
 }
 
