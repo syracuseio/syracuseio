@@ -4,6 +4,8 @@ import moment from 'moment'
 import styled from 'styled-components'
 
 const EventContainer = styled.div`
+  margin-top: 20px;
+
   a {
     color: #008aff;
     text-decoration: none;
@@ -78,16 +80,19 @@ function UpcomingMeetups() {
             <h2>Upcoming developer events</h2>
             {meetups.map(({ node }, idx) => {
               let description = parseDescription(node.description)
-              let parsedDate = moment(node.local_date, 'YYYY-MM-DD').format(
-                'dddd, MMMM Do, YYYY'
-              )
+              let dateMomentObj = moment(node.local_date, 'YYYY-MM-DD')
+
+              let parsedDate = dateMomentObj.format('dddd, MMMM Do, YYYY')
 
               return (
                 <EventContainer key={node.id}>
                   <strong>
-                    <time>{parsedDate}</time>
+                    <time>{parsedDate}</time>{' '}
+                    <span style={{ color: '#646464', fontWeight: '500' }}>
+                      ({dateMomentObj.fromNow()})
+                    </span>
                   </strong>
-                  <h4>
+                  <h4 style={{ marginTop: 0 }}>
                     <a href={node.link}>{node.name}</a>
                   </h4>
                   <blockquote>
