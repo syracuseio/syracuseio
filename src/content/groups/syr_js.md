@@ -8,6 +8,7 @@ summary: >
 img: '../../images/syrjs.png'
 imgAlt: Syracuse JS Meetup logo
 groupType: meetup
+meetupGroup: 'syr_js'
 ---
 
 We are a group dedicated to discussing and working with the JavaScript programming language.
