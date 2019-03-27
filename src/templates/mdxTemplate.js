@@ -7,13 +7,13 @@ function NextMeetup(props) {
   let { data } = props
 
   return (
-    data.upcomingMeetup.edges.length > 0 && (
+    data.upcomingMeetup.nodes.length > 0 && (
       <section>
         <h2>Next Event</h2>
-        <a href={data.upcomingMeetup.edges[0].node.link}>
-          {data.upcomingMeetup.edges[0].node.local_date}
+        <a href={data.upcomingMeetup.nodes[0].link}>
+          {data.upcomingMeetup.nodes[0].local_date}
           {` `}-{` `}
-          {data.upcomingMeetup.edges[0].node.name}
+          {data.upcomingMeetup.nodes[0].name}
         </a>
       </section>
     )
@@ -24,21 +24,21 @@ function ArchivedMeetups(props) {
   let { data } = props
 
   return (
-    data.archivedEvents.edges.length > 0 && (
+    data.archivedEvents.nodes.length > 0 && (
       <section>
         <h2>Past Events</h2>
-        {data.archivedEvents.edges.map(e => {
+        {data.archivedEvents.nodes.map(event => {
           return (
             <article
-              key={e.node.id}
+              key={event.id}
               style={{
                 marginBottom: 10,
               }}
             >
-              <a href={e.node.link}>
-                {e.node.local_date}
+              <a href={event.link}>
+                {event.local_date}
                 {` `}-{` `}
-                {e.node.name}
+                {event.name}
               </a>
             </article>
           )
@@ -82,25 +82,16 @@ export const PageQuey = graphql`
       sort: { fields: local_date }
       limit: 1
     ) {
-      edges {
-        node {
-          name
-          local_date(formatString: "MMMM DD, YYYY")
-          link
-        }
+      nodes {
+        ...EventLinkData
       }
     }
     archivedEvents: allSyrEvent(
       filter: { status: { eq: "past" }, meetup_group: { eq: $meetupGroup } }
       sort: { fields: local_date, order: DESC }
     ) {
-      edges {
-        node {
-          id
-          name
-          local_date(formatString: "MMMM DD, YYYY")
-          link
-        }
+      nodes {
+        ...EventLinkData
       }
     }
   }
