@@ -6,6 +6,7 @@ const meetupArr = [
   { lookup: 'Syracuse JavaScript Meetup', name: 'syr_js' },
   { lookup: 'OpenHack', name: 'open_hack' },
   { lookup: 'Women in Coding', name: 'women_in_coding' },
+  { lookup: 'Happy Hour', name: 'dev_drinks' },
 ]
 
 exports.onCreateNode = ({
