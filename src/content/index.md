@@ -14,7 +14,7 @@ resources](/resources/), an active slack [community](/community/), and more to c
 
 Whether you are new to the area or a seasoned veteran, please check
 out [tech meetups](/groups) and hang out
-with our [local slack group](//slackacuse.herokuapp.com)
+with our [local slack group.](//slackacuse.herokuapp.com)
 
 <center>
   <script async defer src="https://syracuseio.now.sh/slackin.js?large" />
