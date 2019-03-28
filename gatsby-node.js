@@ -2,6 +2,13 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const moment = require('moment')
 
+const meetupArr = [
+  { lookup: 'Syracuse JavaScript Meetup', name: 'syr_js' },
+  { lookup: 'OpenHack', name: 'open_hack' },
+  { lookup: 'Women in Coding', name: 'women_in_coding' },
+  { lookup: 'Happy Hour', name: 'dev_drinks' },
+]
+
 exports.onCreateNode = ({
   actions,
   node,
@@ -43,6 +50,7 @@ exports.onCreateNode = ({
       local_date: node.local_date,
       description: node.description,
       link: node.link,
+      meetup_group: node.meetup_group,
     }
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {
@@ -60,6 +68,19 @@ exports.onCreateNode = ({
   }
 
   if (node.internal.type === `MeetupEvent`) {
+    let meetupGroup
+
+    for (let meetup of meetupArr) {
+      if (node.name.includes(meetup.lookup)) {
+        meetupGroup = meetup.name
+        break
+      }
+    }
+
+    if (meetupGroup === undefined) {
+      meetupGroup = 'other'
+    }
+
     let nodeId = createNodeId(`event-m-${node.id}`)
     let data = {
       name: node.name,
@@ -67,6 +88,7 @@ exports.onCreateNode = ({
       local_date: node.local_date,
       description: node.description,
       link: node.link,
+      meetup_group: meetupGroup,
     }
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {
@@ -90,6 +112,9 @@ exports.createPages = async ({ actions, graphql }) => {
       allMdx {
         edges {
           node {
+            frontmatter {
+              meetupGroup
+            }
             fields {
               slug
             }
@@ -111,6 +136,7 @@ exports.createPages = async ({ actions, graphql }) => {
       path: node.fields.slug,
       context: {
         slug: node.fields.slug,
+        meetupGroup: node.frontmatter.meetupGroup,
       },
     })
   })

@@ -13,3 +13,5 @@ interested in attending.
 
 You're also welcome to invite your members to join [Syracuse.io slack](/community/),
 and coordinate events through this site.
+
+As well, for other events we've hosted not in one of thes particular groups, visit the [Other Events Listing](/groups/other)

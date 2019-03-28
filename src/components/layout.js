@@ -18,9 +18,8 @@ const LayoutContainer = styled.div`
   main {
     flex: 1 0 auto;
     margin: 0 auto;
-    max-width: ${props => props.wide ? '1200px' : '750px'};
+    max-width: ${props => (props.wide ? '1200px' : '750px')};
     width: 100%;
-
 
     ul {
       display: block;
@@ -35,6 +34,7 @@ const LayoutContainer = styled.div`
     }
     .container {
       padding: 0 15px;
+      margin-bottom: 35px;
     }
   }
 `
@@ -81,9 +81,7 @@ const Layout = props => {
             <SEO title={title} />
             <Hero frontmatter={frontmatter} />
             <main>
-              <div className="container">
-                {props.children}
-              </div>
+              <div className="container">{props.children}</div>
             </main>
             <Footer />
           </LayoutContainer>

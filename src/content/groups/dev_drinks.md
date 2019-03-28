@@ -7,6 +7,7 @@ summary: >
   Cheers 🍻
 imgAlt: 'clunking glasses'
 groupType: meetup
+meetupGroup: 'dev_drinks'
 ---
 
 A Developer Happy Hour Series.
