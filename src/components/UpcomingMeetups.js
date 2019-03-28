@@ -17,6 +17,7 @@ const query = graphql`
           description
           local_date
           link
+          meetup_group
         }
       }
     }

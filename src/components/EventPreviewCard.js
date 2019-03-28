@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const EventContainer = styled.div`
   margin-top: 20px;
@@ -42,7 +43,8 @@ function parseDescription(desc) {
 }
 
 function EventPreviewCard(props) {
-  let { description, local_date, link, name } = props.meetup
+  console.log(props)
+  let { description, local_date, link, name, meetup_group } = props.meetup
 
   description = parseDescription(description)
   let dateMomentObj = moment(local_date)
@@ -64,6 +66,11 @@ function EventPreviewCard(props) {
       <blockquote>
         <p dangerouslySetInnerHTML={{ __html: description }} />
       </blockquote>
+      {meetup_group && (
+        <Link to={`/groups/${meetup_group}/`}>
+          Learn more about this Meetup...
+        </Link>
+      )}
       {props.idx !== props.numMeetups - 1 && <hr />}
     </EventContainer>
   )
