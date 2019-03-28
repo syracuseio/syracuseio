@@ -43,7 +43,6 @@ function parseDescription(desc) {
 }
 
 function EventPreviewCard(props) {
-  console.log(props)
   let { description, local_date, link, name, meetup_group } = props.meetup
 
   description = parseDescription(description)
