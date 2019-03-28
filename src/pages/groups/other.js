@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../../components/layout'
 import { graphql, useStaticQuery } from 'gatsby'
+import EventLink from '../../components/EventLink'
 
 const query = graphql`
   {
@@ -9,7 +10,10 @@ const query = graphql`
       sort: { fields: local_date, order: DESC }
     ) {
       nodes {
-        ...EventLinkData
+        id
+        name
+        local_date(formatString: "MMMM DD, YYYY")
+        link
       }
     }
   }
@@ -25,15 +29,7 @@ const OtherEventsPage = () => {
       </p>
       <section>
         {data.allSyrEvent.nodes.map(event => {
-          return (
-            <article key={event.id} style={{ marginBottom: 10 }}>
-              <a href={event.link}>
-                {event.local_date}
-                {` `}-{` `}
-                {event.name}
-              </a>
-            </article>
-          )
+          return <EventLink event={event} key={event.id} />
         })}
       </section>
     </Layout>

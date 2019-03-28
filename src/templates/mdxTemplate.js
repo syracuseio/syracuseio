@@ -2,6 +2,7 @@ import React from 'react'
 import { MDXRenderer } from 'gatsby-mdx'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import EventLink from '../components/EventLink'
 
 function NextMeetup(props) {
   let { data } = props
@@ -10,11 +11,7 @@ function NextMeetup(props) {
     data.upcomingMeetup.nodes.length > 0 && (
       <section>
         <h2>Next Event</h2>
-        <a href={data.upcomingMeetup.nodes[0].link}>
-          {data.upcomingMeetup.nodes[0].local_date}
-          {` `}-{` `}
-          {data.upcomingMeetup.nodes[0].name}
-        </a>
+        <EventLink event={data.upcomingMeetup.nodes[0]} />
       </section>
     )
   )
@@ -28,20 +25,7 @@ function ArchivedMeetups(props) {
       <section>
         <h2>Past Events</h2>
         {data.archivedEvents.nodes.map(event => {
-          return (
-            <article
-              key={event.id}
-              style={{
-                marginBottom: 10,
-              }}
-            >
-              <a href={event.link}>
-                {event.local_date}
-                {` `}-{` `}
-                {event.name}
-              </a>
-            </article>
-          )
+          return <EventLink event={event} key={event.id} />
         })}
       </section>
     )
@@ -83,7 +67,10 @@ export const PageQuey = graphql`
       limit: 1
     ) {
       nodes {
-        ...EventLinkData
+        id
+        name
+        local_date(formatString: "MMMM DD, YYYY")
+        link
       }
     }
     archivedEvents: allSyrEvent(
@@ -91,7 +78,10 @@ export const PageQuey = graphql`
       sort: { fields: local_date, order: DESC }
     ) {
       nodes {
-        ...EventLinkData
+        id
+        name
+        local_date(formatString: "MMMM DD, YYYY")
+        link
       }
     }
   }
