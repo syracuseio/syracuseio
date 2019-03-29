@@ -47,5 +47,47 @@
     "link": "https://hackupstate.com/events/vii",
     "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
     "meetup_group": "hack_upstate"
+  },
+  {
+    "name": "Hack Upstate VI",
+    "local_date": "2015-10-03",
+    "link": "https://hackupstate.com/",
+    "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
+    "meetup_group": "hack_upstate"
+  },
+  {
+    "name": "Hack Upstate V",
+    "local_date": "2015-04-11",
+    "link": "https://hackupstate.com/",
+    "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
+    "meetup_group": "hack_upstate"
+  },
+  {
+    "name": "Hack Upstate IV",
+    "local_date": "2014-10-04",
+    "link": "https://hackupstate.com/",
+    "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
+    "meetup_group": "hack_upstate"
+  },
+  {
+    "name": "Hack Upstate III",
+    "local_date": "2014-04-05",
+    "link": "https://hackupstate.com/",
+    "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
+    "meetup_group": "hack_upstate"
+  },
+  {
+    "name": "Hack Upstate II",
+    "local_date": "2013-10-12",
+    "link": "https://hackupstate.com/",
+    "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
+    "meetup_group": "hack_upstate"
+  },
+  {
+    "name": "Hack Upstate I",
+    "local_date": "2013-04-06",
+    "link": "https://hackupstate.com/",
+    "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
+    "meetup_group": "hack_upstate"
   }
 ]
