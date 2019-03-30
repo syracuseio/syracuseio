@@ -43,7 +43,14 @@ function parseDescription(desc) {
 }
 
 function EventPreviewCard(props) {
-  let { description, local_date, link, name, meetup_group } = props.meetup
+  let {
+    description,
+    local_date,
+    link,
+    name,
+    meetup_group,
+    display_name,
+  } = props.meetup
 
   description = parseDescription(description)
   let dateMomentObj = moment(local_date)
@@ -65,9 +72,9 @@ function EventPreviewCard(props) {
       <blockquote>
         <p dangerouslySetInnerHTML={{ __html: description }} />
       </blockquote>
-      {meetup_group && (
+      {meetup_group && display_name && (
         <Link to={`/groups/${meetup_group}/`}>
-          Learn more about this Meetup...
+          Learn more about {display_name}
         </Link>
       )}
       {props.idx !== props.numMeetups - 1 && <hr />}

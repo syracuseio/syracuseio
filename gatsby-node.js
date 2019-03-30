@@ -3,10 +3,18 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const moment = require('moment')
 
 const meetupArr = [
-  { lookup: 'Syracuse JavaScript Meetup', name: 'syr_js' },
-  { lookup: 'OpenHack', name: 'open_hack' },
-  { lookup: 'Women in Coding', name: 'women_in_coding' },
-  { lookup: 'Happy Hour', name: 'dev_drinks' },
+  {
+    lookup: 'Syracuse JavaScript Meetup',
+    name: 'syr_js',
+    displayName: 'Syracuse Javascript Meetup',
+  },
+  { lookup: 'OpenHack', name: 'open_hack', displayName: 'OpenHack' },
+  {
+    lookup: 'Women in Coding',
+    name: 'women_in_coding',
+    displayName: 'Women in Coding',
+  },
+  { lookup: 'Happy Hour', name: 'dev_drinks', displayName: '/dev/drinks' },
 ]
 
 exports.onCreateNode = ({
@@ -51,6 +59,7 @@ exports.onCreateNode = ({
       description: node.description,
       link: node.link,
       meetup_group: node.meetup_group,
+      display_name: node.display_name,
     }
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {
@@ -69,10 +78,12 @@ exports.onCreateNode = ({
 
   if (node.internal.type === `MeetupEvent`) {
     let meetupGroup
+    let displayName
 
     for (let meetup of meetupArr) {
       if (node.name.includes(meetup.lookup)) {
         meetupGroup = meetup.name
+        displayName = meetup.displayName
         break
       }
     }
@@ -89,6 +100,7 @@ exports.onCreateNode = ({
       description: node.description,
       link: node.link,
       meetup_group: meetupGroup,
+      display_name: displayName,
     }
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {
