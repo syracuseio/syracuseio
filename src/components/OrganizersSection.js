@@ -48,7 +48,7 @@ const OrganizerSection = ({ organizers }) => (
     <OrganizersGrid>
       {organizers.map(organizer => {
         return (
-          <OrganizerContainer>
+          <OrganizerContainer key={`organizer-${organizer.id}`}>
             {organizer.image && (
               <Img fluid={organizer.image.childImageSharp.fluid} />
             )}
