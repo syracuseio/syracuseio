@@ -23,6 +23,9 @@ module.exports = {
       },
     ],
   },
+  mapping: {
+    'Mdx.frontmatter.organizers': `OrganizersJson`,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
@@ -43,8 +46,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `staticEvents`,
-        path: `${__dirname}/src/events`,
+        name: `staticData`,
+        path: `${__dirname}/src/data`,
       },
     },
     `gatsby-transformer-sharp`,

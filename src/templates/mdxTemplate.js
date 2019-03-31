@@ -3,6 +3,7 @@ import { MDXRenderer } from 'gatsby-mdx'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import EventLink from '../components/EventLink'
+import OrganizerSection from '../components/OrganizersSection'
 
 function NextMeetup(props) {
   let { data } = props
@@ -35,6 +36,9 @@ function ArchivedMeetups(props) {
 const MDXTemplate = ({ data }) => (
   <Layout frontmatter={data.mdx.frontmatter}>
     <MDXRenderer>{data.mdx.code.body}</MDXRenderer>
+    {data.mdx.frontmatter.organizers && (
+      <OrganizerSection organizers={data.mdx.frontmatter.organizers} />
+    )}
     <NextMeetup data={data} />
     <ArchivedMeetups data={data} />
   </Layout>
@@ -52,6 +56,18 @@ export const PageQuey = graphql`
         subtitle
         wide
         imgAlt
+        organizers {
+          id
+          twitter
+          email
+          image {
+            childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
         img {
           childImageSharp {
             fluid(maxWidth: 1920) {

@@ -10,6 +10,9 @@ img: '../../images/hackupstate.png'
 imgAlt: Hack Upstate Sign
 groupType: hackathon
 meetupGroup: 'hack_upstate'
+organizers:
+  - 'Jesse Peplinski'
+  - 'Doug Crescenzi'
 ---
 
 Advancing Upstate New York’s tech community through events and education.
