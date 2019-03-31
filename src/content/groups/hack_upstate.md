@@ -12,6 +12,7 @@ groupType: hackathon
 meetupGroup: 'hack_upstate'
 organizers:
   - 'Jesse Peplinski'
+  - 'Doug Crescenzi'
 ---
 
 Advancing Upstate New York’s tech community through events and education.

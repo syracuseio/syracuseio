@@ -24,6 +24,7 @@ const OrganizerContainer = styled.div`
     height: 100px;
     border-radius: 50px;
     margin-right: 20px;
+    border: 1px solid #ccc;
   }
 
   svg {

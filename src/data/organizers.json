@@ -4,5 +4,11 @@
     "email": "jesse@hackupstate.com",
     "twitter": "JessePeplinski",
     "image": "../images/jessepeplinski.jpg"
+  },
+  {
+    "id": "Doug Crescenzi",
+    "email": "doug@hackupstate.com",
+    "twitter": "dougiebuckets",
+    "image": "../images/dougcrescenzi.png"
   }
 ]
