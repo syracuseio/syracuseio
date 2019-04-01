@@ -17,6 +17,25 @@ const meetupArr = [
   { lookup: 'Happy Hour', name: 'dev_drinks', displayName: '/dev/drinks' },
 ]
 
+exports.sourceNodes = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+    type SyrEvent implements Node @infer(noDefaultResolvers: false) {
+      name: String!
+      status: String!
+      local_date: Date!
+      description: String
+      meetup_group: String
+      display_name: String
+      rsvp_count: String
+      link: String
+    }
+  `
+
+  createTypes(typeDefs)
+}
+
 exports.onCreateNode = ({
   actions,
   node,
@@ -101,6 +120,7 @@ exports.onCreateNode = ({
       link: node.link,
       meetup_group: meetupGroup,
       display_name: displayName,
+      rsvp_count: node.yes_rsvp_count,
     }
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {

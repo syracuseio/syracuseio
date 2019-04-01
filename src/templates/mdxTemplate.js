@@ -9,6 +9,7 @@ function NextMeetup(props) {
   let { data } = props
 
   return (
+    data.upcomingMeetup &&
     data.upcomingMeetup.nodes.length > 0 && (
       <section>
         <h2>Next Event</h2>
@@ -22,6 +23,7 @@ function ArchivedMeetups(props) {
   let { data } = props
 
   return (
+    data.archivedEvents &&
     data.archivedEvents.nodes.length > 0 && (
       <section>
         <h2>Past Events</h2>
@@ -40,6 +42,19 @@ const MDXTemplate = ({ data }) => (
       <OrganizerSection organizers={data.mdx.frontmatter.organizers} />
     )}
     <NextMeetup data={data} />
+    {data.upcomingMeetup &&
+      data.upcomingMeetup.nodes.length > 0 &&
+      data.upcomingMeetup.nodes[0].rsvp_count && (
+        <p
+          style={{
+            marginTop: 0,
+            color: '#888',
+          }}
+        >
+          {data.upcomingMeetup.nodes[0].rsvp_count} other people are already
+          planning on going...
+        </p>
+      )}
     <ArchivedMeetups data={data} />
   </Layout>
 )
@@ -87,6 +102,7 @@ export const PageQuey = graphql`
         name
         local_date(formatString: "MMMM DD, YYYY")
         link
+        rsvp_count
       }
     }
     archivedEvents: allSyrEvent(
