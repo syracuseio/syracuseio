@@ -83,7 +83,7 @@ exports.onCreateNode = ({
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {
       id: nodeId,
-      parent: null,
+      parent: node.id,
       children: [],
       internal: {
         type: `SyrEvent`,
@@ -125,7 +125,7 @@ exports.onCreateNode = ({
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {
       id: nodeId,
-      parent: null,
+      parent: node.id,
       children: [],
       internal: {
         type: `SyrEvent`,
