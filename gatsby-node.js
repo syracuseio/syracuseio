@@ -161,15 +161,30 @@ exports.createPages = async ({ actions, graphql }) => {
   }
 
   const mdxTemplate = path.resolve('./src/templates/mdxTemplate.js')
+  const groupMdxTemplate = path.resolve('./src/templates/groupMdxTemplate.js')
 
   data.allMdx.edges.forEach(({ node }) => {
-    actions.createPage({
-      component: mdxTemplate,
-      path: node.fields.slug,
-      context: {
-        slug: node.fields.slug,
-        meetupGroup: node.frontmatter.meetupGroup,
-      },
-    })
+    // Render the group pages with an enhanced template
+    if (
+      node.fields.slug.indexOf('/groups/') !== -1 &&
+      node.fields.slug !== '/groups/'
+    ) {
+      actions.createPage({
+        component: groupMdxTemplate,
+        path: node.fields.slug,
+        context: {
+          slug: node.fields.slug,
+          meetupGroup: node.frontmatter.meetupGroup,
+        },
+      })
+    } else {
+      actions.createPage({
+        component: mdxTemplate,
+        path: node.fields.slug,
+        context: {
+          slug: node.fields.slug,
+        },
+      })
+    }
   })
 }
