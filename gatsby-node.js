@@ -60,7 +60,7 @@ exports.onCreateNode = ({
     let today = moment()
 
     let status =
-      today.diff(moment(node.local_date, 'YYYY-MM-DD'), 'days') >= 0
+      today.diff(moment(node.local_date, 'YYYY-MM-DD'), 'hours') >= 0
         ? `past`
         : `upcoming`
 
