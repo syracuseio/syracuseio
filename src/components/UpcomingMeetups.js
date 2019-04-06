@@ -16,6 +16,7 @@ const query = graphql`
           name
           description
           local_date
+          local_time
           link
           meetup_group
           display_name
@@ -32,7 +33,10 @@ function UpcomingMeetups() {
   let sixWeeksMoment = moment().add(6, 'weeks')
 
   meetups = meetups.filter(evt => {
-    let evtDate = moment(evt.node.local_date)
+    let evtDate = moment(
+      `${evt.node.local_date} ${evt.node.local_time}`,
+      'YYYY-MM-DD HH:mm'
+    )
     return sixWeeksMoment.diff(evtDate) >= 0
   })
 

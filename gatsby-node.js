@@ -25,6 +25,7 @@ exports.sourceNodes = ({ actions }) => {
       name: String!
       status: String!
       local_date: Date!
+      local_time: String!
       description: String
       meetup_group: String
       display_name: String
@@ -58,11 +59,12 @@ exports.onCreateNode = ({
 
   if (node.internal.type === 'EventsJson') {
     let today = moment()
+    let eventMoment = moment(
+      `${node.local_date} ${node.local_time}`,
+      'YYYY-MM-DD HH:mm'
+    )
 
-    let status =
-      today.diff(moment(node.local_date, 'YYYY-MM-DD'), 'hours') >= 0
-        ? `past`
-        : `upcoming`
+    let status = today.diff(eventMoment) >= 0 ? `past` : `upcoming`
 
     actions.createNodeField({
       node,
@@ -75,6 +77,7 @@ exports.onCreateNode = ({
       name: node.name,
       status: status,
       local_date: node.local_date,
+      local_time: node.local_time,
       description: node.description,
       link: node.link,
       meetup_group: node.meetup_group,
@@ -116,6 +119,7 @@ exports.onCreateNode = ({
       name: node.name,
       status: node.status,
       local_date: node.local_date,
+      local_time: node.local_time,
       description: node.description,
       link: node.link,
       meetup_group: meetupGroup,

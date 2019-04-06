@@ -46,6 +46,7 @@ function EventPreviewCard(props) {
   let {
     description,
     local_date,
+    local_time,
     link,
     name,
     meetup_group,
@@ -53,7 +54,7 @@ function EventPreviewCard(props) {
   } = props.meetup
 
   description = parseDescription(description)
-  let dateMomentObj = moment(local_date)
+  let dateMomentObj = moment(`${local_date} ${local_time}`, 'YYYY-MM-DD HH:mm')
 
   let fullDateString = dateMomentObj.format('dddd, MMMM Do, YYYY')
   let timeFromNow = dateMomentObj.fromNow()
