@@ -4950,10 +4950,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.5.4:
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.5.4.tgz#d11a00f61227a6db7965e71ac93e142d73b25587"
-  integrity sha512-tjkE0+H6ZV0hVwH/A4ld3/M2C12Apd5HMgjfI9r5hjSeN0yMEsohnky/mm4uFF8Pt3zfqPrL8XXpg2D9kY16Hg==
+gatsby-cli@^2.5.4, gatsby-cli@^2.5.5:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.5.5.tgz#2cfe893810f00fb69ab91b4b04cb260b5746130c"
+  integrity sha512-wS9PURzzRzSSwUVksAOjgx2i4QzYnkfZDfSEA+l4+Cp9dzCCGWkKPTrFdMoq2YcjuijPxjAM0eTHZZAcLIelGA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -4965,7 +4965,7 @@ gatsby-cli@^2.5.4:
     execa "^0.8.0"
     fs-exists-cached "^1.0.0"
     fs-extra "^4.0.1"
-    gatsby-telemetry "^1.0.4"
+    gatsby-telemetry "^1.0.5"
     hosted-git-info "^2.6.0"
     lodash "^4.17.10"
     meant "^1.0.1"
@@ -5152,10 +5152,10 @@ gatsby-source-meetup@^0.0.1:
     node-fetch "^2.2.1"
     query-string "^6.2.0"
 
-gatsby-telemetry@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.0.4.tgz#309e982919831200400e590b3fcff33735b188fd"
-  integrity sha512-MWICzC8nVlzUOqP0JXDZW0fWey7KSyf/EVqkIhL1MdHNULvCXi8r2keyJfxAbmVL+S/gNb6hnrOJ+LxDpRb4DA==
+gatsby-telemetry@^1.0.4, gatsby-telemetry@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.0.5.tgz#2f56175657ec9423dacb0fddb4c90efbd325de40"
+  integrity sha512-pMi8XTCXn+wMdUIZxRHlw7mZMCN/IU8VqG3G67fCKm7EHyqrnBK6AEuHiAQKv69kMIYp/h3kBsxcP/FqhFYUmg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
