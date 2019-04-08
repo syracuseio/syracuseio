@@ -10,7 +10,7 @@
     "gatsby": "^2.3.4",
     "gatsby-cli": "^2.5.4",
     "gatsby-image": "^2.0.35",
-    "gatsby-mdx": "^0.4.4",
+    "gatsby-mdx": "^0.4.5",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-manifest": "^2.0.26",
