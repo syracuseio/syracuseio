@@ -10,5 +10,11 @@
     "email": "doug@hackupstate.com",
     "twitter": "dougiebuckets",
     "image": "../images/dougcrescenzi.png"
+  },
+  {
+    "id": "Annalena Davis",
+    "email": "annalenakdavis@gmail.com",
+    "twitter": "annalenakdavis",
+    "image": "../images/annalena.jpg"
   }
 ]

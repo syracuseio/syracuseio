@@ -9,6 +9,8 @@ img: '../../images/womenincoding.jpg'
 imgAlt: women typing at laptops
 groupType: meetup
 meetupGroup: 'women_in_coding'
+organizers:
+  - 'Annalena Davis'
 ---
 
 Women in Coding will be hosting workshop style classes once a month every
