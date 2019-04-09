@@ -8,6 +8,8 @@ img: '../../images/openhack-august-15.jpg'
 imgAlt: photo from OpenHack meetup
 groupType: meetup
 meetupGroup: 'open_hack'
+organizers:
+  - 'Mike Vormwald'
 ---
 
 A casual meetup based around developer side-projects. OpenHack Syracuse happens on the second tuesday of every month at Syracuse Coworks.

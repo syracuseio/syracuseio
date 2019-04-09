@@ -16,5 +16,17 @@
     "email": "annalenakdavis@gmail.com",
     "twitter": "annalenakdavis",
     "image": "../images/annalena.jpg"
+  },
+  {
+    "id": "Joey Buczek",
+    "email": "joeybuczek@gmail.com",
+    "twitter": "joeybuczek",
+    "image": "../images/joeybuczek.jpg"
+  },
+  {
+    "id": "Mike Vormwald",
+    "email": "mvormwald@gmail.com",
+    "twitter": "vormwald",
+    "image": "../images/vormwald.jpg"
   }
 ]
