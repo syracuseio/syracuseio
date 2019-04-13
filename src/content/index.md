@@ -16,6 +16,4 @@ Whether you are new to the area or a seasoned veteran, please check
 out [tech meetups](/groups) and hang out
 with our [local slack group.](//slackacuse.herokuapp.com)
 
-Take a look at our upcoming events below:
-
 <UpcomingMeetups />

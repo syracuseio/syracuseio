@@ -12,19 +12,19 @@ const OrganizersGrid = styled.section`
 `
 
 const OrganizerContainer = styled.div`
-  border: 1px solid #ccc;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
+  font-size: 14px;
 
   .gatsby-image-wrapper {
     width: 100px;
     height: 100px;
     border-radius: 50px;
     margin-right: 20px;
-    border: 1px solid #ccc;
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .1); 
   }
 
   svg {
@@ -64,7 +64,7 @@ const OrganizerSection = ({ organizers }) => (
                 <span className="social-link">
                   <Twitter />
                   <a href={`https://twitter.com/${organizer.twitter}`}>
-                    Twitter
+                  @{organizer.twitter}
                   </a>
                 </span>
               )}

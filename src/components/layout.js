@@ -32,6 +32,12 @@ const LayoutContainer = styled.div`
       padding-left: 5px;
       padding-bottom: 0.5em;
     }
+    p {
+      margin: 0 auto;
+      max-width: 750px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
     .container {
       padding: 0 15px;
       margin-bottom: 35px;

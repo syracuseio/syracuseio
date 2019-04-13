@@ -25,8 +25,11 @@ function ArchivedMeetups(props) {
   return (
     data.archivedEvents &&
     data.archivedEvents.nodes.length > 0 && (
-      <section>
-        <h2>Past Events</h2>
+      <section style={{
+        fontSize: '14px',
+        color: '#888',
+      }}>
+        <h3>Past Events</h3>
         {data.archivedEvents.nodes.map(event => {
           return <EventLink event={event} key={event.id} />
         })}
@@ -49,6 +52,7 @@ const GroupMDXTemplate = ({ data }) => (
           style={{
             marginTop: 0,
             color: '#888',
+            fontSize:'14px',
           }}
         >
           {data.upcomingMeetup.nodes[0].rsvp_count} other people are already

@@ -3,6 +3,7 @@ import reset from 'styled-reset'
 
 export const BREAKPOINT_SMALL = '500px'
 export const BREAKPOINT_MEDIUM = '768px'
+const LINK_COLOR = '#008AFF'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Lora', 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 1.42857143;
     color: #404040;
@@ -30,11 +31,11 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
   h1 {
-    font-size: 80px;
+    font-size: 72px;
     font-weight: 800;
   }
   h2 {
-    font-size: 27px;
+    font-size: 30px;
     font-weight: 400;
   }
   h3 {
@@ -42,14 +43,13 @@ const GlobalStyle = createGlobalStyle`
   }
   p {
     line-height: 1.5;
-    margin: 30px 0;
+    margin: 20px 0;
   }
   a {
-    color: #008AFF;
+    color: ${LINK_COLOR};
     text-decoration: none;
   }
   a:focus, a:hover {
-    color: #23527c;
     text-decoration: underline;
     outline: 0;
   }
@@ -63,6 +63,13 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     border-top: 1px solid #eee;
   }
+  blockquote {
+    border-left: 5px solid #eee;
+    padding-left: 26px;
+    margin-left: 0;
+    color: #808080;
+    font-style: italic;
+  }
   .well {
     padding: 19px;
     margin-bottom: 20px;
@@ -73,26 +80,45 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
   }
   .small, small {
-    font-size: 85%;
+    font-size: 16px;
   }
   a.btn {
-    color: #2779bd;
+    color: ${LINK_COLOR};
     font-weight: 600;
-    border: 1px solid #2779bd;
+    border: 1px solid ${LINK_COLOR};
     border-radius: .25rem;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 10px 16px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.3333333;
 
     &:hover {
-      background-color: #2779bd;
+      background-color: ${LINK_COLOR};
       text-decoration: none;
       color: #ffffff;
     }
   }
   .text-center {
     text-align: center;
+  }
+
+  .label {
+    padding: 0.2em 0.6em 0.3em;
+    color: white;
+    font-size: 14px;
+    border-radius: 0.25em;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.hackathon {
+      background: #d9534f;
+    }
+
+    &.meetup {
+      background: #5bc0de;
+    }
   }
   /* Inline code */
   :not(pre) > code {

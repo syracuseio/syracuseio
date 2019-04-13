@@ -9,6 +9,7 @@ const GroupContainer = styled.div`
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 
   div.gatsby-image-wrapper {
     height: 175px;
@@ -32,25 +33,6 @@ const GroupContainer = styled.div`
     font-size: 18px;
   }
 
-  .label {
-    padding: 0.2em 0.6em 0.3em;
-    color: white;
-    font-size: 75%;
-    border-radius: 0.25em;
-    height: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &.hackathon {
-      background: #d9534f;
-    }
-
-    &.meetup {
-      background: #5bc0de;
-    }
-  }
-
   p {
     color: #777;
     flex-grow: 1;
@@ -72,12 +54,12 @@ const GroupContainer = styled.div`
   .bottom a {
     background: white;
     border: 1px solid #ddd;
-    padding: 3px;
+    padding: 2px 8px;
     margin: 2px;
     border-radius: 2px;
     color: inherit;
     text-decoration: none;
-    font-size: 75%;
+    font-size: 14px;
   }
 `
 
