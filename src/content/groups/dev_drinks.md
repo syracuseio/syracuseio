@@ -5,7 +5,7 @@ img: '../../images/devdrinks.jpg'
 summary: >
   A Developer Happy Hour Series.
   Cheers 🍻
-imgAlt: 'clunking glasses'
+imgAlt: 'clinking glasses'
 groupType: meetup
 meetupGroup: 'dev_drinks'
 ---
