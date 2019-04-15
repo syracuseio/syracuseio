@@ -41,9 +41,7 @@ function ArchivedMeetups(props) {
 const GroupMDXTemplate = ({ data }) => (
   <Layout frontmatter={data.mdx.frontmatter}>
     <MDXRenderer>{data.mdx.code.body}</MDXRenderer>
-    {data.mdx.frontmatter.organizers && (
-      <OrganizerSection organizers={data.mdx.frontmatter.organizers} />
-    )}
+    
     <NextMeetup data={data} />
     {data.upcomingMeetup &&
       data.upcomingMeetup.nodes.length > 0 &&
@@ -58,7 +56,10 @@ const GroupMDXTemplate = ({ data }) => (
           {data.upcomingMeetup.nodes[0].rsvp_count} other people are already
           planning on going...
         </p>
-      )}
+    )}
+    {data.mdx.frontmatter.organizers && (
+      <OrganizerSection organizers={data.mdx.frontmatter.organizers} />
+    )}
     <ArchivedMeetups data={data} />
   </Layout>
 )

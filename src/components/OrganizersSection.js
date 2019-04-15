@@ -20,10 +20,10 @@ const OrganizerContainer = styled.div`
   font-size: 14px;
 
   .gatsby-image-wrapper {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50px;
-    margin-right: 20px;
+    margin-right: 12px;
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .1); 
   }
 
@@ -34,7 +34,7 @@ const OrganizerContainer = styled.div`
   .social-link {
     display: inline-flex;
     align-items: center;
-    margin-right: 16px;
+    margin-right: 10px;
   }
 
   .social-link:last-child {
@@ -44,7 +44,7 @@ const OrganizerContainer = styled.div`
 
 const OrganizerSection = ({ organizers }) => (
   <>
-    <h2>Organizers</h2>
+    <h3>Organizers</h3>
     <OrganizersGrid>
       {organizers.map(organizer => {
         return (
@@ -53,7 +53,7 @@ const OrganizerSection = ({ organizers }) => (
               <Img fluid={organizer.image.childImageSharp.fluid} />
             )}
             <div>
-              <h3 style={{ marginTop: 0 }}>{organizer.id}</h3>
+              <p style={{ margin: '10px 0', fontWeight: 600, fontSize: '20px' }}>{organizer.id}</p>
               {organizer.email && (
                 <span className="social-link">
                   <Mail />
