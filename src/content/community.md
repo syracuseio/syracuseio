@@ -43,7 +43,7 @@ You'll also find rooms for specific languages or topics. Check out what's happen
 
 <br/>
 <p class="text-center">
-  <a href="//slackacuse.herokuapp.com" class="btn btn-default btn-lg ">
+  <a href="//slackacuse.herokuapp.com" class="btn">
     Get your invite <i class="fa fa-slack" />
   </a>
 </p>
