@@ -4,6 +4,16 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import EventLink from '../components/EventLink'
 import OrganizerSection from '../components/OrganizersSection'
+import styled from 'styled-components'
+
+const EventContainer = styled.p`
+  margin-top: 0;
+  color: #888888;
+  font-size: 14px;
+`
+const ArchivedEventContainer = styled.section`
+  a { font-size: 16px; }
+`
 
 function NextMeetup(props) {
   let { data } = props
@@ -25,12 +35,12 @@ function ArchivedMeetups(props) {
   return (
     data.archivedEvents &&
     data.archivedEvents.nodes.length > 0 && (
-      <section>
-        <h2>Past Events</h2>
+      <ArchivedEventContainer>
+        <h3>Past Events</h3>
         {data.archivedEvents.nodes.map(event => {
           return <EventLink event={event} key={event.id} />
         })}
-      </section>
+      </ArchivedEventContainer>
     )
   )
 }
@@ -38,23 +48,19 @@ function ArchivedMeetups(props) {
 const GroupMDXTemplate = ({ data }) => (
   <Layout frontmatter={data.mdx.frontmatter}>
     <MDXRenderer>{data.mdx.code.body}</MDXRenderer>
-    {data.mdx.frontmatter.organizers && (
-      <OrganizerSection organizers={data.mdx.frontmatter.organizers} />
-    )}
+
     <NextMeetup data={data} />
     {data.upcomingMeetup &&
       data.upcomingMeetup.nodes.length > 0 &&
       data.upcomingMeetup.nodes[0].rsvp_count && (
-        <p
-          style={{
-            marginTop: 0,
-            color: '#888',
-          }}
-        >
+        <EventContainer>
           {data.upcomingMeetup.nodes[0].rsvp_count} other people are already
           planning on going...
-        </p>
-      )}
+        </EventContainer>
+    )}
+    {data.mdx.frontmatter.organizers && (
+      <OrganizerSection organizers={data.mdx.frontmatter.organizers} />
+    )}
     <ArchivedMeetups data={data} />
   </Layout>
 )

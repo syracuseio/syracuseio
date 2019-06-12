@@ -5,20 +5,17 @@ import { Link } from 'gatsby'
 
 const EventContainer = styled.div`
   margin-top: 20px;
-
-  a {
-    color: #008aff;
-    text-decoration: none;
-  }
-
-  blockquote {
-    border-left: 5px solid #eee;
-    padding-left: 26px;
-    margin-left: 0;
-    color: #808080;
-    font-style: italic;
-  }
 `
+const LearnMore = styled.div`
+  font-size: 14px;
+`
+const EventTitle = styled.h4`
+  margin-top: 10px;
+ `
+ const FromNow = styled.span`
+  color: #a0a0a0;
+  font-weight: 400;
+ `
 
 /**
  * Parse out first paragraph of event description
@@ -58,25 +55,25 @@ function EventPreviewCard(props) {
 
   let fullDateString = dateMomentObj.format('dddd, MMMM Do, YYYY')
   let timeFromNow = dateMomentObj.fromNow()
-
+ 
   return (
     <EventContainer>
       <strong>
         <time>{fullDateString}</time>{' '}
-        <span style={{ color: '#646464', fontWeight: '500' }}>
-          ({timeFromNow})
-        </span>
+        <FromNow>({timeFromNow})</FromNow>
       </strong>
-      <h4 style={{ marginTop: 0 }}>
+      <EventTitle>
         <a href={link}>{name}</a>
-      </h4>
+      </EventTitle>
       <blockquote>
         <p dangerouslySetInnerHTML={{ __html: description }} />
       </blockquote>
       {meetup_group && display_name && (
-        <Link to={`/groups/${meetup_group}/`}>
-          Learn more about {display_name}
-        </Link>
+        <LearnMore>
+          <Link to={`/groups/${meetup_group}/`}>
+            Learn more about {display_name}
+          </Link>
+        </LearnMore>
       )}
       {props.idx !== props.numMeetups - 1 && <hr />}
     </EventContainer>
