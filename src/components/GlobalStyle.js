@@ -103,14 +103,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .label {
-    padding: 0.2em 0.6em 0.3em;
+    padding: 4px;
     color: white;
-    font-size: 14px;
-    border-radius: 0.25em;
-    height: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 12px;
+    position: absolute;
+    bottom: -12px;
+    right: 10px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.12), 0px 2px 4px rgba(0,0,0,0.24);
 
     &.hackathon {
       background: #d9534f;
