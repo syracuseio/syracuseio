@@ -17,22 +17,77 @@ const meetupArr = [
   { lookup: 'Happy Hour', name: 'dev_drinks', displayName: '/dev/drinks' },
 ]
 
-exports.sourceNodes = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
 
-  const typeDefs = `
-    type SyrEvent implements Node @infer(noDefaultResolvers: false) {
-      name: String!
-      status: String!
-      local_date: Date!
-      local_time: String!
-      description: String
-      meetup_group: String
-      display_name: String
-      rsvp_count: String
-      link: String
-    }
-  `
+  const typeDefs = [
+    `
+      interface SyrEvent @nodeInterface {
+        id: ID!
+        name: String!
+        status: String!
+        local_date: Date! @dateformat
+        local_time: String!
+        description: String
+        meetup_group: String
+        display_name: String
+        rsvp_count: String
+        link: String
+      }
+      type EventsJson implements Node & SyrEvent {
+        id: ID!
+        name: String!
+        local_date: Date! @dateformat
+        status: String! @proxy(from: "fields.status")
+        local_time: String!
+        rsvp_count: String
+      }
+    `,
+    schema.buildObjectType({
+      name: 'MeetupEvent',
+      fields: {
+        name: { type: 'String!' },
+        status: { type: 'String!' },
+        local_time: { type: 'String!' },
+        rsvp_count: { type: 'String' },
+        local_date: {
+          type: 'Date!',
+          extensions: {
+            dateformat: {},
+          },
+        },
+        meetup_group: {
+          type: 'String',
+          resolve(parent) {
+            let meetupGroup
+            for (let meetup of meetupArr) {
+              if (parent.name.includes(meetup.lookup)) {
+                meetupGroup = meetup.name
+                break
+              }
+            }
+
+            return meetupGroup || null
+          },
+        },
+        display_name: {
+          type: 'String',
+          resolve(parent) {
+            let displayName
+            for (let meetup of meetupArr) {
+              if (parent.name.includes(meetup.lookup)) {
+                displayName = meetup.displayName
+                break
+              }
+            }
+
+            return displayName || null
+          },
+        },
+      },
+      interfaces: ['Node', 'SyrEvent'],
+    }),
+  ]
 
   createTypes(typeDefs)
 }
@@ -71,74 +126,6 @@ exports.onCreateNode = ({
       name: `status`,
       value: status,
     })
-
-    let nodeId = createNodeId(`event-j-${node.id}`)
-    let data = {
-      name: node.name,
-      status: status,
-      local_date: node.local_date,
-      local_time: node.local_time,
-      description: node.description,
-      link: node.link,
-      meetup_group: node.meetup_group,
-      display_name: node.display_name,
-    }
-    const nodeContent = JSON.stringify(data)
-    const nodeData = Object.assign({}, data, {
-      id: nodeId,
-      parent: node.id,
-      children: [],
-      internal: {
-        type: `SyrEvent`,
-        content: nodeContent,
-        contentDigest: createContentDigest(data),
-      },
-    })
-
-    actions.createNode(nodeData)
-  }
-
-  if (node.internal.type === `MeetupEvent`) {
-    let meetupGroup
-    let displayName
-
-    for (let meetup of meetupArr) {
-      if (node.name.includes(meetup.lookup)) {
-        meetupGroup = meetup.name
-        displayName = meetup.displayName
-        break
-      }
-    }
-
-    if (meetupGroup === undefined) {
-      meetupGroup = 'other'
-    }
-
-    let nodeId = createNodeId(`event-m-${node.id}`)
-    let data = {
-      name: node.name,
-      status: node.status,
-      local_date: node.local_date,
-      local_time: node.local_time,
-      description: node.description,
-      link: node.link,
-      meetup_group: meetupGroup,
-      display_name: displayName,
-      rsvp_count: node.yes_rsvp_count,
-    }
-    const nodeContent = JSON.stringify(data)
-    const nodeData = Object.assign({}, data, {
-      id: nodeId,
-      parent: node.id,
-      children: [],
-      internal: {
-        type: `SyrEvent`,
-        content: nodeContent,
-        contentDigest: createContentDigest(data),
-      },
-    })
-
-    actions.createNode(nodeData)
   }
 }
 

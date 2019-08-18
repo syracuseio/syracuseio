@@ -1,5 +1,5 @@
 import React from 'react'
-import { MDXRenderer } from 'gatsby-mdx'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import EventLink from '../components/EventLink'
@@ -12,7 +12,9 @@ const EventContainer = styled.p`
   font-size: 14px;
 `
 const ArchivedEventContainer = styled.section`
-  a { font-size: 16px; }
+  a {
+    font-size: 16px;
+  }
 `
 
 function NextMeetup(props) {
@@ -47,7 +49,7 @@ function ArchivedMeetups(props) {
 
 const GroupMDXTemplate = ({ data }) => (
   <Layout frontmatter={data.mdx.frontmatter}>
-    <MDXRenderer>{data.mdx.code.body}</MDXRenderer>
+    <MDXRenderer>{data.mdx.body}</MDXRenderer>
 
     <NextMeetup data={data} />
     {data.upcomingMeetup &&
@@ -57,7 +59,7 @@ const GroupMDXTemplate = ({ data }) => (
           {data.upcomingMeetup.nodes[0].rsvp_count} other people are already
           planning on going...
         </EventContainer>
-    )}
+      )}
     {data.mdx.frontmatter.organizers && (
       <OrganizerSection organizers={data.mdx.frontmatter.organizers} />
     )}
@@ -68,9 +70,7 @@ const GroupMDXTemplate = ({ data }) => (
 export const PageQuery = graphql`
   query GroupMDXPageQuery($slug: String!, $meetupGroup: String) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       frontmatter {
         title
         groupType
