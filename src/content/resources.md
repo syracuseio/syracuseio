@@ -11,7 +11,6 @@ The following is a list of Open Data and training opportunities for the Syracuse
 - **[Careers in Code](https://careersincode.org/)**: A coding bootcamp that teaches computer programming to women and minorities to help combat poverty in Central NY
 - **[Tech 4 Kidz](https://tech4kidz.net)**:
   An organization dedicated to providing educational tech classes to kids ages 7 - 15
-- **[Code Community](https://codecommunity.io)**: Weekly programming classes for beginners
 
 ## Open data
 
