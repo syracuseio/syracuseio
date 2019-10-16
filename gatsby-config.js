@@ -59,16 +59,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-catch-links',
-    {
-      resolve: `gatsby-source-meetup`,
-      options: {
-        key: process.env.MEETUP_API_KEY,
-        groupUrlName: `Syracuse-Software-Development-Meetup`,
-        status: `upcoming,past`,
-        desc: `true`,
-        page: 200,
-      },
-    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

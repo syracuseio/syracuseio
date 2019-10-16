@@ -29,7 +29,6 @@ exports.sourceNodes = ({ actions }) => {
       description: String
       meetup_group: String
       display_name: String
-      rsvp_count: String
       link: String
     }
   `
@@ -66,12 +65,6 @@ exports.onCreateNode = ({
 
     let status = today.diff(eventMoment) >= 0 ? `past` : `upcoming`
 
-    actions.createNodeField({
-      node,
-      name: `status`,
-      value: status,
-    })
-
     let nodeId = createNodeId(`event-j-${node.id}`)
     let data = {
       name: node.name,
@@ -98,7 +91,7 @@ exports.onCreateNode = ({
     actions.createNode(nodeData)
   }
 
-  if (node.internal.type === `MeetupEvent`) {
+  if (node.internal.type === `MeetupJson`) {
     let meetupGroup
     let displayName
 
@@ -114,17 +107,30 @@ exports.onCreateNode = ({
       meetupGroup = 'other'
     }
 
+    let today = moment()
+    let eventMoment = moment(
+      `${node.local_date} ${node.local_time}`,
+      'YYYY-MM-DD HH:mm'
+    )
+
+    // console.log(node)
+
+    let status = today.diff(eventMoment) >= 0 ? `past` : `upcoming`
+
+    if (status !== 'upcoming' && status !== 'past') {
+      console.log(JSON.stringify({ s: status }))
+    }
+
     let nodeId = createNodeId(`event-m-${node.id}`)
     let data = {
       name: node.name,
-      status: node.status,
+      status: status,
       local_date: node.local_date,
       local_time: node.local_time,
       description: node.description,
       link: node.link,
       meetup_group: meetupGroup,
       display_name: displayName,
-      rsvp_count: node.yes_rsvp_count,
     }
     const nodeContent = JSON.stringify(data)
     const nodeData = Object.assign({}, data, {
