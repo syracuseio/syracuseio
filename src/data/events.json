@@ -1,5 +1,14 @@
 [
   {
+    "name": "Hack Upstate XIV",
+    "local_date": "2019-10-05",
+    "local_time": "12:00",
+    "link": "https://hackupstate.com/events/xiv",
+    "description": "Hack Upstate organizes weekend hackathons twice a year (i.e., Fall & Spring) where developers, designers, engineers and innovators from across Upstate New York come to Syracuse, NY, to share ideas, form teams, build projects, and win awesome prizes in 24 hours",
+    "meetup_group": "hack_upstate",
+    "display_name": "Hack Upstate"
+  },
+  {
     "name": "Hack Upstate XIII",
     "local_date": "2019-04-06",
     "local_time": "12:00",
