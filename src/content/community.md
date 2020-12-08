@@ -10,7 +10,7 @@ community here in Syracuse, NY.
 You can join the community by:
 
 - Attending one of the [in-person events](/groups)
-- Joining our active slack group ([get your invite here](https://slackacuse.herokuapp.com))
+- Joining our active slack group ([get your invite here](https://join.slack.com/t/syracuseio/shared_invite/zt-aw7rkg3q-2cgCecN524oOVarFJWMOPw))
 
 ---
 
@@ -43,7 +43,7 @@ You'll also find rooms for specific languages or topics. Check out what's happen
 
 <br/>
 <p class="text-center">
-  <a href="//slackacuse.herokuapp.com" class="btn">
+  <a href="https://join.slack.com/t/syracuseio/shared_invite/zt-aw7rkg3q-2cgCecN524oOVarFJWMOPw" class="btn">
     Get your invite <i class="fa fa-slack" />
   </a>
 </p>

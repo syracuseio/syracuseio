@@ -14,6 +14,6 @@ resources](/resources/), an active slack [community](/community/), and more to c
 
 Whether you are new to the area or a seasoned veteran, please check
 out [tech meetups](/groups) and hang out
-with our [local slack group.](//slackacuse.herokuapp.com)
+with our [local slack group.](https://join.slack.com/t/syracuseio/shared_invite/zt-aw7rkg3q-2cgCecN524oOVarFJWMOPw)
 
 <UpcomingMeetups />
