@@ -1,6 +1,6 @@
 ---
-title: local Slack group
-img: '../images/openhack-august-15.jpg'
+title: Slack 
+img: '../images/slack.jpg'
 imgAlt: your friendly local developer slack 
 ---
 
