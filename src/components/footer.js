@@ -77,7 +77,7 @@ const Footer = () => (
           <Twitter color="white" />
         </a>
         <a
-          href="https://slackacuse.herokuapp.com/"
+          href="https://join.slack.com/t/syracuseio/shared_invite/zt-aw7rkg3q-2cgCecN524oOVarFJWMOPw"
           className="socialmedia-image-link"
         >
           <Slack color="white" />
