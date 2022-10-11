@@ -1,5 +1,5 @@
 ---
-title: Syracuse Javascript Meetup
+title: Syracuse JavaScript Meetup
 summary: >
   Each event has a learning and interactive portion.
   Whether you’re an experienced JavaScript programmer or just getting started,
