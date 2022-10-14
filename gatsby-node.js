@@ -6,7 +6,7 @@ const meetupArr = [
   {
     lookup: 'Syracuse JavaScript Meetup',
     name: 'syr_js',
-    displayName: 'Syracuse Javascript Meetup',
+    displayName: 'Syracuse JavaScript Meetup',
   },
   { lookup: 'OpenHack', name: 'open_hack', displayName: 'OpenHack' },
   {
